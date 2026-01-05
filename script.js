@@ -100,17 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "🏥 Command Center Hospitalar",
       description: "Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.",
-      link: null
+      link: "https://seulink.com/command-center"
     },
     {
       title: "🛠 Automação",
       description: "Geração automática de recibos via Google Apps Script. Este projeto automatiza a geração de recibos financeiros utilizando o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.",
-      link: "https://github.com/itamcdo/google-apps-script-receipt-automation"
+      link: null
     },
     {
       title: "📊 Análise de Dados",
       description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
-      link: null
+      link: "https://seulink.com/analise-dados"
     }
   ];
 
@@ -118,17 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   projects.forEach(project => {
     const card = document.createElement("div");
-    card.classList.add("card");
+    card.classList.add("card"); // a classe .card do CSS já define cor, borda e radius
     card.setAttribute("data-animate", "");
-
-    // Força o estilo correto do card (igual ao CSS)
-    card.style.background = "#020617";
-    card.style.border = "1px solid #1e293b";
-    card.style.borderRadius = "14px";
-    card.style.padding = "1.4rem";
-    card.style.display = "flex";
-    card.style.flexDirection = "column";
-    card.style.justifyContent = "space-between";
 
     const title = document.createElement("h3");
     title.innerText = project.title;
