@@ -7,11 +7,11 @@
 
   <!-- Fonte -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Estilo global -->
+  <!-- Estilo -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -20,131 +20,115 @@
   <!-- HERO -->
   <header class="hero">
     <h1 data-animate>Certificados</h1>
-    <p data-animate class="subtitle">
-      Aqui estão os principais certificados que obtive em cursos, treinamentos e workshops.
+    <p class="subtitle" data-animate>
+      Certificados organizados por área de conhecimento.
     </p>
   </header>
 
   <!-- CONTEÚDO -->
-  <main>
+  <section class="skills-wrapper certificates-wrapper">
 
-    <section class="certificates-grid" data-animate>
+    <!-- 📊 DADOS -->
+    <div class="skill-category" data-animate>
+      <h2>📊 Dados</h2>
 
-      <!-- CARD 1 -->
-      <div class="card" data-animate>
-        <div class="icon">📄</div>
-
-        <h3>Nexa – Fundamentos de IA Generativa com Bedrock</h3>
-        <span class="badge">9h</span>
-
-        <p>
-          Curso introdutório e prático sobre Inteligência Artificial Generativa,
-          aplicando os principais serviços da AWS para desenvolvimento de soluções reais.
-        </p>
-
-        <a
-          href="certificates/nexa.pdf"
-          class="button secondary pdf-button"
-          target="_blank"
+      <div class="certificate-card">
+        <div class="hours">80h</div>
+        <div class="certificate-content">
+          <h3>Potência Tech powered by iFood | Ciência de Dados com Python</h3>
+          <p>
+            Formação completa em Ciência de Dados com Python, incluindo análise de dados,
+            projetos práticos e introdução a Machine Learning.
+          </p>
+          <a
+            href="certificates/potência-tech.pdf"
+            target="_blank"
+            class="certificate-link"
           >
-            <i class="fas fa-file-pdf"></i>
-          Abrir PDF
-        </a>
+            📄 Ver certificado
+          </a>
+        </div>
       </div>
 
-      <!-- CARD 2 -->
-      <div class="card" data-animate>
-        <div class="icon">📄</div>
-
-        <h3>Nexa – Machine Learning e GenAI na Prática</h3>
-        <span class="badge">10h</span>
-
-        <p>
-          Formação focada nos pilares de ML, Processamento de Linguagem Natural e GenAI. 
-          O curso aborda a construção de soluções inteligentes através de ferramentas low-code, 
-          unindo a teoria dos bastidores da IA com a entrega prática de valor para o mercado.
-        </p>
-
-        <a
-          href="certificates/nexa-machine.pdf"
-         class="button secondary pdf-button"
-          target="_blank"
+      <div class="certificate-card">
+        <div class="hours">41.5h</div>
+        <div class="certificate-content">
+          <h3>SQL + SQL Server – Modelagem de Dados</h3>
+          <p>
+            Curso focado em modelagem, integração e análise de dados utilizando SQL Server
+            e Power BI para apoio à tomada de decisão.
+          </p>
+          <a
+            href="certificates/power-bi-sql.pdf"
+            target="_blank"
+            class="certificate-link"
           >
-            <i class="fas fa-file-pdf"></i>
-          Abrir PDF
-        </a>
+            📄 Ver certificado
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🤖 INTELIGÊNCIA ARTIFICIAL -->
+    <div class="skill-category" data-animate>
+      <h2>🤖 Inteligência Artificial</h2>
+
+      <div class="certificate-card">
+        <div class="hours">10h</div>
+        <div class="certificate-content">
+          <h3>Nexa – Machine Learning e GenAI na Prática</h3>
+          <p>
+            Formação focada nos pilares de Machine Learning, NLP e GenAI,
+            aplicando conceitos teóricos em soluções práticas.
+          </p>
+          <a
+            href="certificates/nexa-machine.pdf"
+            target="_blank"
+            class="certificate-link"
+          >
+            📄 Ver certificado
+          </a>
+        </div>
       </div>
 
-      <!-- CARD 3 -->
-      <div class="card" data-animate>
-        <div class="icon">📄</div>
-
-        <h3>Formação Fundamentos de Inteligência Artificial</h3>
-        <span class="badge">10h</span>
-
-        <p>
-          Formação intensiva sobre os fundamentos e a prática da Inteligência Artificial. 
-          Capacitação voltada para a criação de soluções inovadoras e vantagem competitiva 
-          através das principais tecnologias de IA.
-        </p>
-
-        <a
-          href="certificates/fundamentos-inteligencia-artificial.pdf"
-         class="button secondary pdf-button"
-          target="_blank"
+      <div class="certificate-card">
+        <div class="hours">9h</div>
+        <div class="certificate-content">
+          <h3>Nexa – Fundamentos de IA Generativa com Bedrock</h3>
+          <p>
+            Curso introdutório e prático sobre Inteligência Artificial Generativa
+            utilizando serviços da AWS.
+          </p>
+          <a
+            href="certificates/nexa.pdf"
+            target="_blank"
+            class="certificate-link"
           >
-            <i class="fas fa-file-pdf"></i>
-          Abrir PDF
-        </a>
-      </div>
-      
-      <!-- CARD 4 -->
-      <div class="card" data-animate>
-        <div class="icon">📄</div>
-
-        <h3>SQL + SQL Server – Modelagem de Dados</h3>
-        <span class="badge">41.5h</span>
-
-        <p>
-          Curso focado em modelagem, integração e análise de dados utilizando SQL Server
-          e Power BI para apoio à tomada de decisão.
-        </p>
-
-        <a
-          href="certificates/power-bi-sql.pdf"
-           class="button secondary pdf-button"
-          target="_blank"
-          >
-            <i class="fas fa-file-pdf"></i>
-          Abrir PDF
-        </a>
+            📄 Ver certificado
+          </a>
+        </div>
       </div>
 
-       <!-- CARD 5 -->
-      <div class="card" data-animate>
-        <div class="icon">📄</div>
-
-        <h3>Potência Tech powered by iFood | Ciência de Dados com Python</h3>
-        <span class="badge">80h</span>
-
-        <p>
-          Curso voltado para desenvolvimento de habilidades em Ciência de Dados usando Python, incluindo projetos práticos, 
-          análise de dados e conceitos de Machine Learning, preparando o participante para o mercado de tecnologia.
-        </p>
-
-        <a
-          href="certificates/potência-tech.pdf"
-           class="button secondary pdf-button"
-          target="_blank"
+      <div class="certificate-card">
+        <div class="hours">10h</div>
+        <div class="certificate-content">
+          <h3>Formação Fundamentos de Inteligência Artificial</h3>
+          <p>
+            Formação intensiva sobre conceitos, aplicações práticas e estratégias
+            de Inteligência Artificial.
+          </p>
+          <a
+            href="certificates/fundamentos-inteligencia-artificial.pdf"
+            target="_blank"
+            class="certificate-link"
           >
-            <i class="fas fa-file-pdf"></i>
-          Abrir PDF
-        </a>
+            📄 Ver certificado
+          </a>
+        </div>
       </div>
-      
-    </section>
+    </div>
 
-  </main>
+  </section>
 
   <!-- FOOTER -->
   <footer>
