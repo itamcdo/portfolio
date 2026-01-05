@@ -34,7 +34,7 @@
 </header>
 
 <section class="cards-grid" id="home-projects">
-  <!-- Os dois projetos de destaque serão gerados via JS -->
+  <!-- 2 projetos de destaque serão gerados via script.js -->
 </section>
 
 <footer>
@@ -42,78 +42,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  // ==========================
-  // Destaque de projetos na home
-  // ==========================
-  document.addEventListener("DOMContentLoaded", () => {
-    const projects = [
-      {
-        title: "🏥 Command Center Hospitalar",
-        description: "Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.",
-        link: "https://seulink.com/command-center"
-      },
-      {
-        title: "🛠 Automação",
-        description: "Geração automática de recibos via Google Apps Script. Este projeto automatiza a geração de recibos financeiros utilizando o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.",
-        link: null
-      },
-      {
-        title: "📊 Análise de Dados",
-        description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
-        link: "https://seulink.com/analise-dados"
-      }
-    ];
-
-    const cardsContainer = document.getElementById("home-projects");
-
-    // Mostrar apenas 2 projetos na home
-    projects.slice(0, 2).forEach(project => {
-      const card = document.createElement("div");
-      card.classList.add("card");
-      card.setAttribute("data-animate", "");
-
-      const title = document.createElement("h3");
-      title.innerText = project.title;
-
-      const desc = document.createElement("p");
-      desc.innerText = project.description;
-
-      card.appendChild(title);
-      card.appendChild(desc);
-
-      if (project.link) {
-        const a = document.createElement("a");
-        a.href = project.link;
-        a.target = "_blank";
-        a.classList.add("button", "primary");
-        a.innerText = "Acessar Projeto";
-        card.appendChild(a);
-      } else {
-        const span = document.createElement("span");
-        span.classList.add("button", "secondary");
-        span.innerText = "Em Andamento";
-        card.appendChild(span);
-      }
-
-      cardsContainer.appendChild(card);
-
-      // Adiciona animação
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      observer.observe(card);
-    });
-  });
-</script>
-
 </body>
 </html>
