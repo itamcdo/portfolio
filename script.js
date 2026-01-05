@@ -82,17 +82,17 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "🏥 Command Center Hospitalar",
       description: "Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.",
-      link: "https://seulink.com/command-center"
+      link: null
     },
     {
       title: "🛠 Automação",
       description: "Geração automática de recibos via Google Apps Script. Automatiza a geração de recibos usando Google Sheets e Docs.",
-      link: null
+      link: "https://github.com/itamcdo/google-apps-script-receipt-automation"
     },
     {
       title: "📊 Análise de Dados",
       description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
-      link: "https://seulink.com/analise-dados"
+      link: null
     }
   ];
 
