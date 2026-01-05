@@ -31,7 +31,7 @@ Alguns destaques:
 - Python para Análise de Dados
 - SQL e Modelagem de Dados
 
-A lista completa de certificados está disponível [aqui](https://itamcdo.github.io/portfolio/projects.html).
+A lista completa de certificados está disponível [aqui](https://itamcdo.github.io/portfolio/certificates.html).
 
 ---
 
@@ -42,10 +42,10 @@ Entre em contato comigo via [formulário do portfolio](https://itamcdo.github.io
 
 ## 🔗 Links
 
-- [Portfolio]([index.html](https://itamcdo.github.io/portfolio/))
-- [Projetos]([projects.html](https://itamcdo.github.io/portfolio/projects.html))
-- [Certificados]([certificates.html](https://itamcdo.github.io/portfolio/certificates.html))
-- [Skills]([skills.html](https://itamcdo.github.io/portfolio/skills.html))
-- [Contato]([contacts.html](https://itamcdo.github.io/portfolio/contacts.html))
+- [Portfolio](https://itamcdo.github.io/portfolio/)
+- [Projetos](https://itamcdo.github.io/portfolio/projects.html)
+- [Certificados](https://itamcdo.github.io/portfolio/certificates.html)
+- [Skills](https://itamcdo.github.io/portfolio/skills.html)
+- [Contato](https://itamcdo.github.io/portfolio/contacts.html)
 
 ---
