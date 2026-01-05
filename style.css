@@ -57,7 +57,9 @@ body {
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
+  text-align: center;
   transition: 0.25s ease;
+  display: inline-block;
 }
 
 .button.primary {
@@ -66,7 +68,7 @@ body {
 }
 
 .button.secondary {
-  border: 1px solid #475569;
+  background-color: #475569;
   color: #e5e7eb;
 }
 
@@ -98,6 +100,9 @@ body {
   transition: 0.25s ease;
   opacity: 0;
   transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card.show {
@@ -114,6 +119,11 @@ body {
   font-size: 0.85rem;
   color: #cbd5f5;
   line-height: 1.5;
+}
+
+/* Botão/link dentro do card */
+.card .button {
+  margin-top: 1rem;
 }
 
 /* ==========================
@@ -287,7 +297,6 @@ footer {
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2rem;
-  }
 }
 
 /* ==========================
@@ -302,7 +311,6 @@ footer {
 /* ==========================
    PROFILE IMG – FIX DEFINITIVO (DESKTOP + MOBILE)
 ========================== */
-
 .hero .profile-img {
   width: 120px;
   aspect-ratio: 1 / 1;     
