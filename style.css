@@ -24,7 +24,7 @@ body {
 }
 
 /* ==========================
-   HERO
+   HERO (CABEÇALHO)
 ========================== */
 .hero {
   max-width: 960px;
@@ -35,6 +35,7 @@ body {
 
 .hero h1 {
   font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -44,98 +45,130 @@ body {
 }
 
 /* ==========================
-   GRID DE CONTEÚDO (SKILLS E CERTIFICADOS)
+   GRID SISTEMA (SKILLS E CERTIFICADOS)
 ========================== */
 .skills-wrapper {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   display: grid;
-  /* Cria colunas para as categorias (Dados, IA, etc) */
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   align-items: start;
 }
 
-/* Container de cada categoria */
+/* Container das categorias (Cards Grandes) */
 .skill-category {
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(15, 23, 42, 0.5);
   border: 1px solid #1e293b;
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 2rem; /* Espaçamento interno corrigido */
   transition: 0.3s;
 }
 
 .skill-category h2 {
   font-size: 1.3rem;
   color: #60a5fa;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid #1e293b;
   padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* ==========================
-   CARDS DE CERTIFICADO (CORREÇÃO DA IMAGEM)
+   SKILLS (BARRAS DE PROGRESSO)
+========================== */
+.skill-item {
+  margin-bottom: 1.8rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  color: #f8fafc;
+}
+
+.skill-bar-bg {
+  background: #0f172a;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+}
+
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  width: 0; /* Animado pelo JS */
+  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+/* ==========================
+   CERTIFICADOS (CARDS INTERNOS)
 ========================== */
 .certificate-card {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  background: rgba(2, 6, 23, 0.6);
+  gap: 1.2rem;
+  background: rgba(2, 6, 23, 0.4);
   border: 1px solid #334155;
-  padding: 1.2rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 1.5rem;
   transition: 0.3s ease;
 }
 
 .certificate-card:hover {
   border-color: #3b82f6;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(15, 23, 42, 0.8);
   transform: translateX(5px);
 }
 
 .hours {
-  min-width: 55px;
-  height: 55px;
+  min-width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, #3b82f6, #60a5fa);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: white;
-  flex-shrink: 0; /* Impede que a bolinha amasse */
-}
-
-.certificate-content {
-  flex: 1;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .certificate-content h3 {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #f8fafc;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   line-height: 1.4;
 }
 
 .certificate-content p {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: #94a3b8;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
-/* BOTÃO DO CERTIFICADO */
 .certificate-link {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: #3b82f6;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #60a5fa;
   text-decoration: none;
   font-weight: 600;
+  padding: 0.5rem 1rem;
   border: 1px solid #3b82f6;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: 0.2s;
 }
 
@@ -145,72 +178,22 @@ body {
 }
 
 /* ==========================
-   SKILLS (BARRAS DE PROGRESSO)
-========================== */
-.skill-item {
-  margin-bottom: 1rem;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  margin-bottom: 0.4rem;
-}
-
-.skill-bar-bg {
-  background: #1e293b;
-  height: 8px;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.skill-bar {
-  height: 100%;
-  background: #3b82f6;
-  width: 0; /* Animado pelo script */
-  transition: width 1s ease-in-out;
-}
-
-/* ==========================
-   PROJETOS (GRID)
-========================== */
-#all-projects, #home-projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ==========================
    FOOTER
 ========================== */
 footer {
   text-align: center;
-  padding: 3rem;
+  padding: 4rem 1.5rem;
   color: #64748b;
   font-size: 0.9rem;
+  border-top: 1px solid #1e293b;
+  margin-top: 3rem;
 }
 
 /* ==========================
    RESPONSIVO
 ========================== */
 @media (max-width: 768px) {
-  .skills-wrapper {
-    grid-template-columns: 1fr;
-  }
-  
-  .certificate-card {
-    flex-direction: row; /* Mantém ícone ao lado no tablet */
-  }
-}
-
-@media (max-width: 480px) {
-  .certificate-card {
-    flex-direction: column; /* Empilha no celular muito pequeno */
-    align-items: center;
-    text-align: center;
-  }
+  .skills-wrapper { grid-template-columns: 1fr; }
+  .certificate-card { flex-direction: column; align-items: center; text-align: center; }
+  .hero h1 { font-size: 2.1rem; }
 }
