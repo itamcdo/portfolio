@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const hoursElements = document.querySelectorAll(".hours");
 
   if (hoursElements.length > 0) {
-
     const countUp = (element) => {
       const targetText = element.innerText.replace("h", "");
       const target = parseFloat(targetText);
@@ -94,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================
-  // PROJETOS – geração dinâmica de cards
+  // PROJETOS – array central
   // ==========================
   const projects = [
     {
@@ -112,43 +111,60 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
       link: "https://seulink.com/analise-dados"
     }
+    // Adicione novos projetos aqui
   ];
 
-  const cardsContainer = document.querySelector(".cards-grid");
+  // ==========================
+  // Determinar página e quantidade de projetos
+  // ==========================
+  const path = window.location.pathname;
+  let projectsToShow = projects;
 
-  projects.forEach(project => {
-    const card = document.createElement("div");
-    card.classList.add("card"); // a classe .card do CSS já define cor, borda e radius
-    card.setAttribute("data-animate", "");
+  let container = null;
 
-    const title = document.createElement("h3");
-    title.innerText = project.title;
+  if (path.includes("index.html") || path === "/" || path.includes("home")) {
+    // Home → mostrar só 2 projetos
+    projectsToShow = projects.slice(0, 2);
+    container = document.getElementById("home-projects");
+  } else if (path.includes("projects.html")) {
+    // Página de projetos → todos
+    container = document.getElementById("all-projects");
+  }
 
-    const desc = document.createElement("p");
-    desc.innerText = project.description;
+  if (container) {
+    projectsToShow.forEach(project => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.setAttribute("data-animate", "");
 
-    card.appendChild(title);
-    card.appendChild(desc);
+      const title = document.createElement("h3");
+      title.innerText = project.title;
 
-    // Botão ou "Em Andamento"
-    if (project.link) {
-      const a = document.createElement("a");
-      a.href = project.link;
-      a.target = "_blank";
-      a.classList.add("button", "primary");
-      a.innerText = "Acessar Projeto";
-      card.appendChild(a);
-    } else {
-      const span = document.createElement("span");
-      span.classList.add("button", "secondary");
-      span.innerText = "Em Andamento";
-      card.appendChild(span);
-    }
+      const desc = document.createElement("p");
+      desc.innerText = project.description;
 
-    cardsContainer.appendChild(card);
+      card.appendChild(title);
+      card.appendChild(desc);
 
-    // Observador para animação
-    animateObserver.observe(card);
-  });
+      if (project.link) {
+        const a = document.createElement("a");
+        a.href = project.link;
+        a.target = "_blank";
+        a.classList.add("button", "primary");
+        a.innerText = "Acessar Projeto";
+        card.appendChild(a);
+      } else {
+        const span = document.createElement("span");
+        span.classList.add("button", "secondary");
+        span.innerText = "Em Andamento";
+        card.appendChild(span);
+      }
+
+      container.appendChild(card);
+
+      // Observador para animação
+      animateObserver.observe(card);
+    });
+  }
 
 });
