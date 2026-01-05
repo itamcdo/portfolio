@@ -3,55 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projetos</title>
+<title>Projetos | Maria Ita Macêdo</title>
 <link rel="stylesheet" href="style.css">
-<style>
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-
-  .card {
-    background: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .card h3 {
-    margin-bottom: 0.5rem;
-  }
-
-  .card p {
-    flex-grow: 1;
-  }
-
-  .card a,
-  .card span {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .card a {
-    background-color: #4caf50;
-    color: white;
-  }
-
-  .card span {
-    background-color: #ccc;
-    color: #333;
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -61,24 +15,8 @@
   <p class="subtitle" data-animate>Projetos em dados, automação e BI.</p>
 </header>
 
-<section class="cards-grid">
-  <div class="card" data-animate>
-    <h3>🏥 Command Center Hospitalar</h3>
-    <p>Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.</p>
-    <a href="https://seulink.com/command-center" target="_blank">Acessar Projeto</a>
-  </div>
-
-  <div class="card" data-animate>
-    <h3>🛠 Automação</h3>
-    <p>Geração automática de recibos via Google Apps Script. Este projeto automatiza a geração de recibos financeiros utilizando o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.</p>
-    <span>Em Andamento</span>
-  </div>
-
-  <div class="card" data-animate>
-    <h3>📊 Análise de Dados</h3>
-    <p>Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.</p>
-    <a href="https://seulink.com/analise-dados" target="_blank">Acessar Projeto</a>
-  </div>
+<section class="cards-grid" id="all-projects">
+  <!-- Todos os projetos serão gerados via JS -->
 </section>
 
 <footer>
@@ -86,5 +24,80 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // ==========================
+  // Gerar todos os projetos dinamicamente
+  // ==========================
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const projects = [
+      {
+        title: "🏥 Command Center Hospitalar",
+        description: "Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.",
+        link: "https://seulink.com/command-center"
+      },
+      {
+        title: "🛠 Automação",
+        description: "Geração automática de recibos via Google Apps Script. Este projeto automatiza a geração de recibos financeiros utilizando o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.",
+        link: null
+      },
+      {
+        title: "📊 Análise de Dados",
+        description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
+        link: "https://seulink.com/analise-dados"
+      }
+      // Adicione novos projetos aqui
+    ];
+
+    const cardsContainer = document.getElementById("all-projects");
+
+    projects.forEach(project => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.setAttribute("data-animate", "");
+
+      const title = document.createElement("h3");
+      title.innerText = project.title;
+
+      const desc = document.createElement("p");
+      desc.innerText = project.description;
+
+      card.appendChild(title);
+      card.appendChild(desc);
+
+      if (project.link) {
+        const a = document.createElement("a");
+        a.href = project.link;
+        a.target = "_blank";
+        a.classList.add("button", "primary");
+        a.innerText = "Acessar Projeto";
+        card.appendChild(a);
+      } else {
+        const span = document.createElement("span");
+        span.classList.add("button", "secondary");
+        span.innerText = "Em Andamento";
+        card.appendChild(span);
+      }
+
+      cardsContainer.appendChild(card);
+
+      // Adiciona animação
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      observer.observe(card);
+    });
+
+  });
+</script>
+
 </body>
 </html>
