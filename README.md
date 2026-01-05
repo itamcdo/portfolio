@@ -19,7 +19,7 @@ Sou **Analista de Dados e Business Intelligence**, atualmente à frente do **Com
 
 - **Dashboard Hospitalar:** Análise de indicadores operacionais e assistenciais com Power BI.
 - **Automação de Relatórios:** Scripts em Python e Google Apps Script para otimização de processos.
-- Mais projetos estão disponíveis [aqui](projects.html).
+- Mais projetos estão disponíveis [aqui]([projects.html](https://itamcdo.github.io/portfolio/projects.html)).
 
 ---
 
@@ -31,21 +31,21 @@ Alguns destaques:
 - Python para Análise de Dados
 - SQL e Modelagem de Dados
 
-A lista completa de certificados está disponível [aqui](certificates.html).
+A lista completa de certificados está disponível [aqui](https://itamcdo.github.io/portfolio/projects.html).
 
 ---
 
 ## 📫 Contato
 
-Entre em contato comigo via [formulário do portfolio](contacts.html) ou envie um e-mail para: itammacedo20@gmail.com
+Entre em contato comigo via [formulário do portfolio](https://itamcdo.github.io/portfolio/contacts.html) ou envie um e-mail para: itammacedo20@gmail.com
 ---
 
 ## 🔗 Links
 
-- [Portfolio](index.html)
-- [Projetos](projects.html)
-- [Certificados](certificates.html)
-- [Skills](skills.html)
-- [Contato](contacts.html)
+- [Portfolio]([index.html](https://itamcdo.github.io/portfolio/))
+- [Projetos]([projects.html](https://itamcdo.github.io/portfolio/projects.html))
+- [Certificados]([certificates.html](https://itamcdo.github.io/portfolio/certificates.html))
+- [Skills]([skills.html](https://itamcdo.github.io/portfolio/skills.html))
+- [Contato]([contacts.html](https://itamcdo.github.io/portfolio/contacts.html))
 
 ---
