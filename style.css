@@ -55,7 +55,7 @@ body {
     0 8px 18px rgba(0, 0, 0, 0.6);
 }
 
-/* Foto menor para a Home */
+/* Foto menor para Home */
 .profile-img-home {
   width: 80px;
   height: 80px;
@@ -111,7 +111,7 @@ body {
    CARD
 ========================== */
 .card {
-  background: #020617;
+  background: #020617 !important; /* força a cor correta */
   border: 1px solid #1e293b;
   border-radius: 14px;
   padding: 1.4rem;
