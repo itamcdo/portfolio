@@ -93,4 +93,62 @@ document.addEventListener("DOMContentLoaded", () => {
     hoursElements.forEach(el => hoursObserver.observe(el));
   }
 
+  // ==========================
+  // PROJETOS – geração dinâmica de cards
+  // ==========================
+  const projects = [
+    {
+      title: "🏥 Command Center Hospitalar",
+      description: "Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.",
+      link: "https://seulink.com/command-center"
+    },
+    {
+      title: "🛠 Automação",
+      description: "Geração automática de recibos via Google Apps Script. Este projeto automatiza a geração de recibos financeiros utilizando o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.",
+      link: null
+    },
+    {
+      title: "📊 Análise de Dados",
+      description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
+      link: "https://seulink.com/analise-dados"
+    }
+  ];
+
+  const cardsContainer = document.querySelector(".cards-grid");
+
+  projects.forEach(project => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.setAttribute("data-animate", "");
+
+    const title = document.createElement("h3");
+    title.innerText = project.title;
+
+    const desc = document.createElement("p");
+    desc.innerText = project.description;
+
+    card.appendChild(title);
+    card.appendChild(desc);
+
+    // Botão ou "Em Andamento"
+    if (project.link) {
+      const a = document.createElement("a");
+      a.href = project.link;
+      a.target = "_blank";
+      a.classList.add("button", "primary");
+      a.innerText = "Acessar Projeto";
+      card.appendChild(a);
+    } else {
+      const span = document.createElement("span");
+      span.classList.add("button", "secondary");
+      span.innerText = "Em Andamento";
+      card.appendChild(span);
+    }
+
+    cardsContainer.appendChild(card);
+
+    // Observador para animação
+    animateObserver.observe(card);
+  });
+
 });
