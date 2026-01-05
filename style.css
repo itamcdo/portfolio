@@ -141,29 +141,32 @@ body {
 }
 
 /* ==========================
-   CARDS DA HOME MAIS COMPACTOS
+   CARDS COMPACTOS DA HOME
 ========================== */
 #home-projects .card {
-  padding: 1rem;
+  padding: 0.8rem 1rem;       /* menos padding interno */
   font-size: 0.82rem;
   border-radius: 12px;
   min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* inicia do topo */
 }
 
 #home-projects .card h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.4rem;
+  font-size: 0.9rem;          /* título menor */
+  margin-bottom: 0.3rem;
 }
 
 #home-projects .card p {
-  font-size: 0.8rem;
-  line-height: 1.4;
-  margin-bottom: 0.6rem;
+  font-size: 0.78rem;         /* descrição menor */
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
 }
 
 #home-projects .card .button {
-  padding: 0.5rem 1rem;
-  font-size: 0.78rem;
+  padding: 0.4rem 0.9rem;     /* botão mais compacto */
+  font-size: 0.76rem;
 }
 
 /* ==========================
