@@ -300,26 +300,31 @@ footer {
 }
 
 /* ==========================
-   PROFILE IMG – FIX DEFINITIVO
+   PROFILE IMG – FIX DEFINITIVO (HOME)
 ========================== */
 
-.profile-img {
-  width: 120px;
-  height: 120px;
-  max-width: 120px;
-  max-height: 120px;
+.hero .profile-img {
+  width: 120px !important;
+  height: 120px !important;
+  max-width: 120px !important;
+  max-height: 120px !important;
+
+  display: block;
+  margin: 0 auto 1.2rem;
 
   object-fit: cover;
-  display: block;
+  border-radius: 50%;
+
+  /* impede que transform afete layout */
+  flex-shrink: 0;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .profile-img {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
+  .hero .profile-img {
+    width: 100px !important;
+    height: 100px !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
   }
 }
-
