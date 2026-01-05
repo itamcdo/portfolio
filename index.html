@@ -14,14 +14,14 @@
   <img
     src="assets/profile.jpeg"
     alt="Maria Ita Macêdo"
-    class="profile-img"
+    class="profile-img profile-img-home"
     data-animate
   />
   
   <h1 data-animate>Maria Ita Macêdo</h1>
   
   <p class="subtitle" data-animate>
-    Analista de Dados & BI focada em tranformar dados em insights estratégicos, com experiência
+    Analista de Dados & BI focada em transformar dados em insights estratégicos, com experiência
     em visualização, automação e suporte à decisão em ambientes críticos.
   </p>
 
@@ -33,22 +33,8 @@
   </div>
 </header>
 
-<section class="cards-grid">
-  <div class="card" data-animate>
-    <h3>📊 Análise de Dados</h3>
-    <p>Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.</p>
-  </div>
-
-  <div class="card" data-animate>
-    <h3>⚙️ Automação</h3>
-    <p>Geração automática de recibos via Google Apps Script.Este projeto automatiza a geração de recibos financeiros utilizando
-      o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.</p>
-  </div>
-
-  <div class="card" data-animate>
-    <h3>🏥 Command Center</h3>
-    <p>Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.</p>
-  </div>
+<section class="cards-grid" id="home-projects">
+  <!-- Os dois projetos de destaque serão gerados via JS -->
 </section>
 
 <footer>
@@ -56,5 +42,78 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // ==========================
+  // Destaque de projetos na home
+  // ==========================
+  document.addEventListener("DOMContentLoaded", () => {
+    const projects = [
+      {
+        title: "🏥 Command Center Hospitalar",
+        description: "Acompanhamento em tempo real das operações hospitalares para gestão eficiente e tomada de decisão ágil.",
+        link: "https://seulink.com/command-center"
+      },
+      {
+        title: "🛠 Automação",
+        description: "Geração automática de recibos via Google Apps Script. Este projeto automatiza a geração de recibos financeiros utilizando o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.",
+        link: null
+      },
+      {
+        title: "📊 Análise de Dados",
+        description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
+        link: "https://seulink.com/analise-dados"
+      }
+    ];
+
+    const cardsContainer = document.getElementById("home-projects");
+
+    // Mostrar apenas 2 projetos na home
+    projects.slice(0, 2).forEach(project => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+      card.setAttribute("data-animate", "");
+
+      const title = document.createElement("h3");
+      title.innerText = project.title;
+
+      const desc = document.createElement("p");
+      desc.innerText = project.description;
+
+      card.appendChild(title);
+      card.appendChild(desc);
+
+      if (project.link) {
+        const a = document.createElement("a");
+        a.href = project.link;
+        a.target = "_blank";
+        a.classList.add("button", "primary");
+        a.innerText = "Acessar Projeto";
+        card.appendChild(a);
+      } else {
+        const span = document.createElement("span");
+        span.classList.add("button", "secondary");
+        span.innerText = "Em Andamento";
+        card.appendChild(span);
+      }
+
+      cardsContainer.appendChild(card);
+
+      // Adiciona animação
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      observer.observe(card);
+    });
+  });
+</script>
+
 </body>
 </html>
