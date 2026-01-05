@@ -1,5 +1,5 @@
 /* ==========================
-   RESET
+   RESET & BASE
 ========================== */
 * {
   margin: 0;
@@ -7,9 +7,6 @@
   box-sizing: border-box;
 }
 
-/* ==========================
-   BODY
-========================== */
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #020617, #0f172a, #020617);
@@ -17,10 +14,11 @@ body {
   animation: gradientBG 18s ease infinite;
   color: #e5e7eb;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ==========================
-   HERO
+   HERO (CABEÇALHO)
 ========================== */
 .hero {
   max-width: 960px;
@@ -32,53 +30,50 @@ body {
 .hero h1 {
   font-size: 2.4rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .hero .subtitle {
-  margin-top: 1rem;
   line-height: 1.6;
   color: #cbd5f5;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* Foto de perfil padrão */
+/* Foto de perfil */
 .hero .profile-img {
   width: 120px;
-  aspect-ratio: 1 / 1;
-  height: auto;
+  height: 120px;
   display: block;
   margin: 0 auto 1.2rem;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #3b82f6;
-  box-shadow:
-    0 0 0 3px rgba(59, 130, 246, 0.25),
-    0 8px 18px rgba(0, 0, 0, 0.6);
-}
-
-/* Foto maior para Home (proporcional ao nome) */
-.hero .profile-img.profile-img-home {
-  width: 90px !important;
-  height: 90px !important;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
 }
 
 /* ==========================
-   BOTÕES
+   BOTÕES GERAIS
 ========================== */
 .buttons {
   margin-top: 2.2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 1rem;
 }
 
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.65rem 1.3rem;
   border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   transition: 0.25s ease;
+  cursor: pointer;
 }
 
 .button.primary {
@@ -89,72 +84,84 @@ body {
 .button.secondary {
   border: 1px solid #475569;
   color: #e5e7eb;
+  background: transparent;
 }
 
 .button:hover {
   transform: translateY(-2px);
+  filter: brightness(1.2);
 }
 
 /* ==========================
-   GRID DE CARDS ULTRA COMPACTO
+   GRID DE PROJETOS (CORRIGIDO)
 ========================== */
-#home-projects {
-  max-width: 1100px;
+#home-projects, #all-projects {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0.8rem; /* menor gap vertical e horizontal */
+  /* Cria colunas automáticas que se ajustam ao tamanho da tela */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 /* ==========================
-   CARDS ULTRA COMPACTOS DA HOME
+   CARDS DE PROJETO (CENTRALIZADOS)
 ========================== */
-#home-projects .card {
-  background: #020617 !important; /* força a cor correta */
+.card {
+  background: #020617;
   border: 1px solid #1e293b;
   border-radius: 12px;
-  padding: 0.55rem 0.85rem;      /* ultra compacto */
-  font-size: 0.78rem;
-  min-height: auto;
+  padding: 1.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: 0.25s ease;
-  opacity: 0;
+  flex-direction: column;   /* Alinha itens em vertical */
+  align-items: center;       /* Centraliza horizontalmente */
+  text-align: center;        /* Centraliza o texto */
+  transition: 0.3s ease;
+  opacity: 0;                /* Para animação do script */
   transform: translateY(20px);
 }
 
-#home-projects .card.show {
+.card.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-#home-projects .card h3 {
-  font-size: 0.83rem;             /* título menor */
-  margin-bottom: 0.2rem;
+.card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-#home-projects .card p {
-  font-size: 0.73rem;             /* descrição menor */
-  line-height: 1.2;
-  margin-bottom: 0.25rem;         /* menos espaço */
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
 }
 
-#home-projects .card .button {
-  padding: 0.3rem 0.75rem;        /* botão menor */
-  font-size: 0.72rem;
+.card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Faz o texto ocupar o espaço e empurrar o botão para baixo */
+}
+
+/* Botão dentro do Card */
+.card .button {
+  width: fit-content;
+  min-width: 140px;
 }
 
 /* ==========================
-   SKILLS
+   SKILLS & CERTIFICADOS
 ========================== */
 .skills-wrapper {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2.5rem 1.2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.6rem;
 }
 
@@ -165,162 +172,42 @@ body {
   padding: 1.4rem;
 }
 
-.skill-category h2 {
-  font-size: 1rem;
-  color: #93c5fd;
-  margin-bottom: 1.2rem;
-}
-
-.skill-item {
-  margin-bottom: 1rem;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  margin-bottom: 0.35rem;
-}
-
 .skill-bar-bg {
   background: #1e293b;
-  height: 9px;
-  border-radius: 6px;
+  height: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  margin-top: 5px;
 }
 
 .skill-bar {
   height: 100%;
-  width: 0;
   background: linear-gradient(90deg, #3b82f6, #60a5fa);
   transition: width 1.2s ease;
 }
 
 /* ==========================
-   CERTIFICADOS
-========================== */
-.certificates-wrapper {
-  grid-template-columns: 1fr;
-}
-
-.certificate-card {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-  padding: 1.4rem;
-  margin-bottom: 1.2rem;
-  background: #020617;
-  border: 1px solid #1e293b;
-  border-radius: 14px;
-  transition: 0.25s ease;
-}
-
-.certificate-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-}
-
-.hours {
-  min-width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.certificate-content h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.4rem;
-}
-
-.certificate-content p {
-  font-size: 0.85rem;
-  color: #cbd5f5;
-  line-height: 1.5;
-}
-
-.certificate-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #93c5fd;
-}
-
-.certificate-link:hover {
-  text-decoration: underline;
-}
-
-/* ==========================
-   FOOTER
+   FOOTER & ANIMAÇÕES
 ========================== */
 footer {
   border-top: 1px solid #1e293b;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
   font-size: 0.85rem;
   color: #94a3b8;
 }
 
-/* ==========================
-   ANIMAÇÕES
-========================== */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
-}
-
-[data-animate].show {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ==========================
    RESPONSIVO
 ========================== */
-@media (max-width: 900px) {
-  .skills-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .certificate-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hours {
-    margin-bottom: 0.6rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero .profile-img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .hero .profile-img.profile-img-home {
-    width: 75px !important;
-    height: 75px !important;
-  }
-}
-
-/* ==========================
-   BACKGROUND
-========================== */
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .skills-wrapper { grid-template-columns: 1fr; }
+  #home-projects, #all-projects { grid-template-columns: 1fr; }
 }
