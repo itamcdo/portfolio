@@ -14,7 +14,14 @@ body {
   animation: gradientBG 18s ease infinite;
   color: #e5e7eb;
   min-height: 100vh;
+  line-height: 1.6;
   overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ==========================
@@ -28,52 +35,50 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .hero .subtitle {
-  line-height: 1.6;
   color: #cbd5f5;
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 1.1rem;
 }
 
-/* Foto de perfil */
 .hero .profile-img {
   width: 120px;
   height: 120px;
-  display: block;
-  margin: 0 auto 1.2rem;
-  object-fit: cover;
+  margin: 0 auto 1.5rem;
   border-radius: 50%;
   border: 3px solid #3b82f6;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
 /* ==========================
    BOTÕES GERAIS
 ========================== */
 .buttons {
-  margin-top: 2.2rem;
+  margin-top: 2rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.65rem 1.3rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.25s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
+  border: none;
 }
 
 .button.primary {
@@ -88,37 +93,35 @@ body {
 }
 
 .button:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.2);
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================
-   GRID DE PROJETOS (CORRIGIDO)
+   GRID DE PROJETOS (#home-projects e #all-projects)
 ========================== */
 #home-projects, #all-projects {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   display: grid;
-  /* Cria colunas automáticas que se ajustam ao tamanho da tela */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-/* ==========================
-   CARDS DE PROJETO (CENTRALIZADOS)
-========================== */
+/* CARDS DE PROJETOS */
 .card {
   background: #020617;
   border: 1px solid #1e293b;
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
-  flex-direction: column;   /* Alinha itens em vertical */
-  align-items: center;       /* Centraliza horizontalmente */
-  text-align: center;        /* Centraliza o texto */
+  flex-direction: column; 
+  align-items: center;    /* Centraliza botão e títulos */
+  text-align: center;     /* Centraliza o texto */
   transition: 0.3s ease;
-  opacity: 0;                /* Para animação do script */
+  opacity: 0;             /* Inicia invisível para animação do script */
   transform: translateY(20px);
 }
 
@@ -130,31 +133,22 @@ body {
 .card:hover {
   border-color: #3b82f6;
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card h3 {
   font-size: 1.1rem;
-  margin-bottom: 0.75rem;
-  color: #fff;
+  margin-bottom: 0.8rem;
 }
 
 .card p {
   font-size: 0.85rem;
-  line-height: 1.5;
   color: #94a3b8;
   margin-bottom: 1.5rem;
-  flex-grow: 1; /* Faz o texto ocupar o espaço e empurrar o botão para baixo */
-}
-
-/* Botão dentro do Card */
-.card .button {
-  width: fit-content;
-  min-width: 140px;
+  flex-grow: 1;           /* Empurra o botão para baixo */
 }
 
 /* ==========================
-   SKILLS & CERTIFICADOS
+   SKILLS
 ========================== */
 .skills-wrapper {
   max-width: 1100px;
@@ -166,10 +160,18 @@ body {
 }
 
 .skill-category {
-  background: rgba(2, 6, 23, 0.6);
+  background: rgba(15, 23, 42, 0.6);
   border: 1px solid #1e293b;
   border-radius: 16px;
-  padding: 1.4rem;
+  padding: 1.5rem;
+}
+
+.skill-category h2 {
+  font-size: 1rem;
+  color: #93c5fd;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .skill-bar-bg {
@@ -178,36 +180,99 @@ body {
   border-radius: 10px;
   overflow: hidden;
   margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .skill-bar {
   height: 100%;
   background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  width: 0; /* Animado pelo script */
   transition: width 1.2s ease;
 }
 
 /* ==========================
-   FOOTER & ANIMAÇÕES
+   CERTIFICADOS
+========================== */
+.certificates-wrapper {
+  grid-template-columns: 1fr !important; /* Lista vertical para certificados */
+  max-width: 800px;
+}
+
+.certificate-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+}
+
+.hours {
+  min-width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.certificate-content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.certificate-content p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0.8rem;
+}
+
+/* Link de Certificado estilo Botão Small */
+.certificate-link {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: #1e293b;
+  color: #93c5fd;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.certificate-link:hover {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+/* ==========================
+   FOOTER
 ========================== */
 footer {
   border-top: 1px solid #1e293b;
   text-align: center;
-  padding: 3rem;
+  padding: 3rem 1.5rem;
   font-size: 0.85rem;
   color: #94a3b8;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 /* ==========================
    RESPONSIVO
 ========================== */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
-  .skills-wrapper { grid-template-columns: 1fr; }
-  #home-projects, #all-projects { grid-template-columns: 1fr; }
+  .certificate-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
