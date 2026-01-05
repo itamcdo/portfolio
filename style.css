@@ -55,10 +55,10 @@ body {
     0 8px 18px rgba(0, 0, 0, 0.6);
 }
 
-/* Foto menor para Home */
+/* Foto maior para Home (proporcional ao nome) */
 .hero .profile-img.profile-img-home {
-  width: 80px !important;
-  height: 80px !important;
+  width: 90px !important;
+  height: 90px !important;
 }
 
 /* ==========================
@@ -138,6 +138,32 @@ body {
   font-size: 0.85rem;
   color: #cbd5f5;
   line-height: 1.5;
+}
+
+/* ==========================
+   CARDS DA HOME MAIS COMPACTOS
+========================== */
+#home-projects .card {
+  padding: 1rem;
+  font-size: 0.82rem;
+  border-radius: 12px;
+  min-height: auto;
+}
+
+#home-projects .card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+#home-projects .card p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+
+#home-projects .card .button {
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
 }
 
 /* ==========================
@@ -305,8 +331,8 @@ footer {
   }
 
   .hero .profile-img.profile-img-home {
-    width: 70px !important;
-    height: 70px !important;
+    width: 75px !important;
+    height: 75px !important;
   }
 }
 
