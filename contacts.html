@@ -5,26 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato | Maria Ita Macêdo</title>
 
-  <!-- Ícones -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 
-  <!-- Fonte -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Estilo global -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Estilo específico da página -->
   <style>
     header {
       text-align: center;
-      margin-top: 80px;
+      margin-top: 60px; /* Ajustado para dar espaço ao botão */
       margin-bottom: 30px;
     }
 
@@ -85,7 +81,7 @@
       min-height: 120px;
     }
 
-    /* BOTÃO */
+    /* BOTÃO ENVIAR */
     .contact-button {
       margin-top: 10px;
       padding: 14px;
@@ -156,10 +152,19 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(59,130,246,0.4);
     }
+    
+    /* Ajuste para o botão de voltar não ficar centralizado pelo header */
+    .navigation-container {
+      margin-top: 20px;
+    }
   </style>
 </head>
 
 <body class="contacts-page">
+
+  <div class="navigation-container">
+    <a href="index.html" class="button secondary">← Voltar para Home</a>
+  </div>
 
   <header>
     <h1 data-animate>Contato</h1>
