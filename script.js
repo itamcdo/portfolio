@@ -85,16 +85,21 @@ document.addEventListener("DOMContentLoaded", () => {
       link: null
     },
     {
+      title: "🐍 Sistema Bancário em Python",
+      description: "Projeto desenvolvido como desafio da DIO para praticar lógica de programação e fundamentos do Python.",
+      link: "https://github.com/itamcdo/sistema-bancario-python"
+    },
+    {
       title: "🛠 Automação",
       description: "Geração automática de recibos via Google Apps Script. Automatiza a geração de recibos usando Google Sheets e Docs.",
       link: "https://github.com/itamcdo/google-apps-script-receipt-automation"
-    },
-    {
+     },
+    { 
       title: "📊 Análise de Dados",
       description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
       link: null
     }
-  ];
+  ]
 
 // ==========================
   // DETECTAR HOME OU PROJECTS
