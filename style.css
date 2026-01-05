@@ -96,31 +96,30 @@ body {
 }
 
 /* ==========================
-   GRID DE CARDS HOME ULTRA COMPACTO
+   GRID DE CARDS ULTRA COMPACTO
 ========================== */
 #home-projects {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.8rem 1rem;             /* grid mais compacto */
+  padding: 2rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0.6rem;                      /* menor espaçamento */
+  gap: 0.8rem; /* menor gap vertical e horizontal */
 }
 
 /* ==========================
-   CARDS HOME ULTRA COMPACTOS
+   CARDS ULTRA COMPACTOS DA HOME
 ========================== */
 #home-projects .card {
-  background: #020617 !important;  /* força a cor correta */
+  background: #020617 !important; /* força a cor correta */
   border: 1px solid #1e293b;
   border-radius: 12px;
-  padding: 0.45rem 0.75rem;        /* padding mínimo */
-  font-size: 0.75rem;
+  padding: 0.55rem 0.85rem;      /* ultra compacto */
+  font-size: 0.78rem;
   min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0.25rem;                    /* espaçamento interno menor */
   transition: 0.25s ease;
   opacity: 0;
   transform: translateY(20px);
@@ -132,26 +131,19 @@ body {
 }
 
 #home-projects .card h3 {
-  font-size: 0.8rem;
-  margin-bottom: 0.15rem;
-}
-
-#home-projects .card p {
-  font-size: 0.7rem;
-  line-height: 1.15;
+  font-size: 0.83rem;             /* título menor */
   margin-bottom: 0.2rem;
 }
 
-#home-projects .card .button {
-  padding: 0.25rem 0.65rem;
-  font-size: 0.7rem;
-  width: fit-content;               /* botão não força largura */
+#home-projects .card p {
+  font-size: 0.73rem;             /* descrição menor */
+  line-height: 1.2;
+  margin-bottom: 0.25rem;         /* menos espaço */
 }
 
-/* Hover leve nos cards */
-#home-projects .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+#home-projects .card .button {
+  padding: 0.3rem 0.75rem;        /* botão menor */
+  font-size: 0.72rem;
 }
 
 /* ==========================
