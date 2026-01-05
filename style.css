@@ -40,7 +40,7 @@ body {
   color: #cbd5f5;
 }
 
-/* Foto de perfil */
+/* Foto de perfil padrão */
 .hero .profile-img {
   width: 120px;
   aspect-ratio: 1 / 1;     
@@ -56,9 +56,9 @@ body {
 }
 
 /* Foto menor para Home */
-.profile-img-home {
-  width: 80px;
-  height: 80px;
+.hero .profile-img.profile-img-home {
+  width: 80px !important;
+  height: 80px !important;
 }
 
 /* ==========================
@@ -301,11 +301,12 @@ footer {
 
   .hero .profile-img {
     width: 100px;
+    height: 100px;
   }
 
-  .profile-img-home {
-    width: 70px;
-    height: 70px;
+  .hero .profile-img.profile-img-home {
+    width: 70px !important;
+    height: 70px !important;
   }
 }
 
