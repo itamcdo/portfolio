@@ -9,191 +9,126 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #020617, #0f172a, #020617);
-  background-size: 300% 300%;
-  animation: gradientBG 18s ease infinite;
+  background: #020617;
   color: #e5e7eb;
-  min-height: 100vh;
   line-height: 1.6;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  overflow-x: hidden;
 }
 
 /* ==========================
-   HERO (CABEÇALHO)
+   HERO & FOTO (CORREÇÃO MOBILE)
 ========================== */
 .hero {
-  max-width: 960px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 5rem 1.5rem 3rem;
+  padding: 4rem 1.5rem 2rem;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.hero .profile-img {
+  width: 120px; /* Tamanho padrão */
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #3b82f6;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
-.hero .subtitle {
-  color: #cbd5f5;
-  font-size: 1.1rem;
-}
+.hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #fff; }
+.hero .subtitle { color: #94a3b8; font-size: 1.1rem; }
 
 /* ==========================
-   GRID SISTEMA (SKILLS E CERTIFICADOS)
+   GRID PRINCIPAL
 ========================== */
-.skills-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+.skills-wrapper, #all-projects, #home-projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
 }
 
-/* Container das categorias (Cards Grandes) */
+/* CARDS DE CATEGORIA (DADOS, IA, BACKEND) */
 .skill-category {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(15, 23, 42, 0.6);
   border: 1px solid #1e293b;
-  border-radius: 20px;
-  padding: 2rem; /* Espaçamento interno corrigido */
-  transition: 0.3s;
+  border-radius: 16px;
+  padding: 2rem !important; /* Força o espaçamento interno */
+  height: fit-content;
 }
 
 .skill-category h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #60a5fa;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #1e293b;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  border-bottom: 1px solid #334155;
 }
 
 /* ==========================
-   SKILLS (BARRAS DE PROGRESSO)
+   SKILLS (BARRAS)
 ========================== */
-.skill-item {
-  margin-bottom: 1.8rem;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin-bottom: 0.6rem;
-  color: #f8fafc;
-}
-
-.skill-bar-bg {
-  background: #0f172a;
-  height: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #1e293b;
-}
-
-.skill-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #3b82f6, #60a5fa);
-  width: 0; /* Animado pelo JS */
-  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
-}
+.skill-item { margin-bottom: 1.5rem; }
+.skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.skill-bar-bg { background: #0f172a; height: 10px; border-radius: 10px; border: 1px solid #1e293b; overflow: hidden; }
+.skill-bar { height: 100%; background: #3b82f6; width: 0; transition: width 1.5s ease; }
 
 /* ==========================
-   CERTIFICADOS (CARDS INTERNOS)
+   CERTIFICADOS (ESTRUTURA DE CARD)
 ========================== */
 .certificate-card {
-  display: flex;
+  display: flex !important; /* Força o alinhamento horizontal */
   align-items: flex-start;
-  gap: 1.2rem;
-  background: rgba(2, 6, 23, 0.4);
-  border: 1px solid #334155;
-  padding: 1.5rem;
-  border-radius: 14px;
-  margin-bottom: 1.5rem;
-  transition: 0.3s ease;
-}
-
-.certificate-card:hover {
-  border-color: #3b82f6;
-  background: rgba(15, 23, 42, 0.8);
-  transform: translateX(5px);
+  gap: 1rem;
+  background: #0f172a;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  margin-bottom: 1rem;
 }
 
 .hours {
-  min-width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  min-width: 50px;
+  height: 50px;
+  background: #3b82f6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 0.9rem;
-  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.certificate-content h3 {
-  font-size: 1.05rem;
-  color: #f8fafc;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
+.certificate-content h3 { font-size: 1rem; margin-bottom: 0.3rem; color: #fff; }
+.certificate-content p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 0.7rem; }
+.certificate-link { color: #3b82f6; text-decoration: none; font-size: 0.8rem; font-weight: bold; }
 
-.certificate-content p {
-  font-size: 0.88rem;
-  color: #94a3b8;
-  margin-bottom: 1rem;
-}
+/* ==========================
+   RESPONSIVIDADE (MOBILE)
+========================== */
+@media (max-width: 768px) {
+  .hero .profile-img {
+    width: 90px; /* Reduz a foto no celular */
+    height: 90px;
+  }
+  
+  .hero h1 { font-size: 1.8rem; }
 
-.certificate-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: #60a5fa;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border: 1px solid #3b82f6;
-  border-radius: 8px;
-  transition: 0.2s;
-}
+  .skills-wrapper {
+    grid-template-columns: 1fr; /* Uma coluna só no celular */
+  }
 
-.certificate-link:hover {
-  background: #3b82f6;
-  color: #fff;
+  .certificate-card {
+    flex-direction: column; /* Empilha o selo de horas no celular */
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* ==========================
    FOOTER
 ========================== */
-footer {
-  text-align: center;
-  padding: 4rem 1.5rem;
-  color: #64748b;
-  font-size: 0.9rem;
-  border-top: 1px solid #1e293b;
-  margin-top: 3rem;
-}
-
-/* ==========================
-   RESPONSIVO
-========================== */
-@media (max-width: 768px) {
-  .skills-wrapper { grid-template-columns: 1fr; }
-  .certificate-card { flex-direction: column; align-items: center; text-align: center; }
-  .hero h1 { font-size: 2.1rem; }
-}
+footer { text-align: center; padding: 3rem; color: #64748b; font-size: 0.8rem; }
