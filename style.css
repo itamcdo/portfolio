@@ -18,19 +18,19 @@ body {
 /* ==========================
    PADRONIZAÇÃO DE TAMANHO
 ========================== */
-.hero, 
+.hero,
 .navigation-container,
-.skills-wrapper, 
-#all-projects, 
-#home-projects, 
+.skills-wrapper,
+#all-projects,
+#home-projects,
 footer {
-  max-width: 1000px; /* Tamanho único para todo o site */
+  max-width: 1000px;
   margin: 0 auto;
   padding: 1.5rem;
 }
 
 /* ==========================
-   HERO & FOTO (CORREÇÃO MOBILE)
+   HERO
 ========================== */
 .hero {
   padding-top: 5rem;
@@ -38,9 +38,12 @@ footer {
   text-align: center;
 }
 
+/* ==========================
+   FOTO DE PERFIL
+========================== */
 .hero .profile-img {
-  width: 120px !important;
-  height: 120px !important;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 3px solid #3b82f6;
   object-fit: cover;
@@ -50,84 +53,133 @@ footer {
 
 @media (max-width: 768px) {
   .hero .profile-img {
-    width: 90px !important;
-    height: 90px !important;
+    width: 90px;
+    height: 90px;
   }
 }
 
 /* ==========================
-   NAVEGAÇÃO (BOTÃO VOLTAR)
+   BOTÃO VOLTAR / NAVEGAÇÃO
 ========================== */
 .navigation-container {
   display: flex;
-  justify-content: flex-start; /* Alinha o botão à esquerda */
+  justify-content: flex-start;
   padding-bottom: 0;
 }
 
 /* ==========================
-   BOTÕES (SISTEMA GLOBAL)
+   BOTÕES (GLOBAL)
 ========================== */
-.button, .certificate-link {
-  display: inline-flex !important;
+.button,
+.certificate-link {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.2rem !important;
-  border-radius: 8px !important;
-  font-size: 0.85rem !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
   transition: 0.3s ease;
   cursor: pointer;
   border: 1px solid transparent;
 }
 
-.button.primary, .certificate-link {
-  background: #3b82f6 !important;
-  color: #ffffff !important;
+.button.primary,
+.certificate-link {
+  background: #3b82f6;
+  color: #ffffff;
 }
 
 .button.secondary {
-  background: transparent !important;
-  border: 1px solid #334155 !important;
-  color: #e5e7eb !important;
+  background: transparent;
+  border: 1px solid #334155;
+  color: #e5e7eb;
 }
 
-.button:hover, .certificate-link:hover {
+.button:hover,
+.certificate-link:hover {
   filter: brightness(1.2);
   transform: translateY(-2px);
 }
 
 /* ==========================
-   GRIDS PADRONIZADOS (SKILLS/CERTIFICADOS/PROJETOS)
+   GRID PADRÃO
 ========================== */
-.skills-wrapper, #all-projects, #home-projects {
+.skills-wrapper,
+#all-projects,
+#home-projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  align-items: stretch; /* Cards com mesma altura na linha */
+  align-items: stretch;
 }
 
-.skill-category, .card {
+/* HOME x PROJETOS */
+#home-projects {
+  margin-top: 2rem;
+}
+
+#all-projects {
+  margin-top: 3.5rem;
+}
+
+/* ==========================
+   CARDS (PROJETOS / SKILLS)
+========================== */
+.skill-category,
+.card {
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid #1e293b;
   border-radius: 16px;
-  padding: 1.8rem !important;
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
 }
 
-.card p { flex-grow: 1; } /* Empurra botão para o fim do card */
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  margin-bottom: 1.2rem;
+}
 
 /* ==========================
-   SKILLS (BARRAS)
+   SKILLS – BARRAS
 ========================== */
-.skill-item { margin-bottom: 1.2rem; }
-.skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
-.skill-bar-bg { background: #0f172a; height: 10px; border-radius: 10px; border: 1px solid #1e293b; overflow: hidden; }
-.skill-bar { height: 100%; background: #3b82f6; width: 0; transition: width 1.5s ease; }
+.skill-item {
+  margin-bottom: 1.2rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.skill-bar-bg {
+  background: #0f172a;
+  height: 10px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  background: #3b82f6;
+  width: 0;
+  transition: width 1.5s ease;
+}
 
 /* ==========================
-   CERTIFICADOS (ESTRUTURA COMPACTA)
+   CERTIFICADOS
 ========================== */
 .certificate-card {
   display: flex;
@@ -153,19 +205,61 @@ footer {
   flex-shrink: 0;
 }
 
-.certificate-content h3 { font-size: 0.95rem; margin-bottom: 0.2rem; }
-.certificate-content p { font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem; }
+.certificate-content h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.certificate-content p {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
 
 /* ==========================
-   RESPONSIVIDADE (MOBILE)
+   ANIMAÇÕES AO SCROLL
+========================== */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate].show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================
+   RESPONSIVIDADE
 ========================== */
 @media (max-width: 768px) {
-  .skills-wrapper { grid-template-columns: 1fr; }
-  .certificate-card { flex-direction: row; text-align: left; }
-  .navigation-container { justify-content: center; } /* Centraliza botão voltar no mobile */
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .navigation-container {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  #home-projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ==========================
    FOOTER
 ========================== */
-footer { text-align: center; padding: 3rem; color: #64748b; font-size: 0.8rem; }
+footer {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 0.8rem;
+}
