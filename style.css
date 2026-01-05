@@ -167,6 +167,81 @@ body {
 }
 
 /* ==========================
+   CERTIFICADOS (NOVO)
+========================== */
+
+/* Wrapper reaproveitando skills */
+.certificates-wrapper {
+  grid-template-columns: 1fr;
+}
+
+/* Card do certificado */
+.certificate-card {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+
+  padding: 1.4rem;
+  margin-bottom: 1.2rem;
+
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+
+  transition: 0.25s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* Horas em destaque */
+.hours {
+  min-width: 88px;
+  height: 88px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Conteúdo do certificado */
+.certificate-content h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.certificate-content p {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+  line-height: 1.5;
+}
+
+/* Link do PDF */
+.certificate-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #93c5fd;
+}
+
+.certificate-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
    FOOTER
 ========================== */
 footer {
@@ -198,6 +273,15 @@ footer {
   .skills-wrapper {
     grid-template-columns: 1fr;
   }
+
+  .certificate-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hours {
+    margin-bottom: 0.6rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -213,313 +297,4 @@ footer {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-/* ==========================
-   FOTO DE PERFIL (AJUSTADA)
-========================== */
-.profile-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-
-  margin: 0 auto 1.2rem;
-  display: block;
-
-  border: 3px solid #3b82f6;
-  box-shadow:
-    0 0 0 3px rgba(59, 130, 246, 0.25),
-    0 8px 18px rgba(0, 0, 0, 0.6);
-
-  transition: transform 0.3s ease;
-}
-
-.profile-img:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 600px) {
-  .profile-img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-  }
-}
-
-.certificates-grid {
-  display: grid;
-
-  /* cards com largura fixa */
-  grid-template-columns: repeat(auto-fit, 260px);
-  gap: 1.5rem;
-
-  justify-content: center; 
-  
-  width: 100%;
-  max-width: 1100px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
-}
-
-
-
-/* ==========================
-   CONTATO – HEADER
-========================== */
-
-.contacts-page header {
-  text-align: center;
-  padding-top: 6rem;   /* abaixa o título */
-  padding-bottom: 3rem;
-}
-
-.contacts-page header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-}
-
-.contacts-page header p {
-  max-width: 600px;
-  margin: 0 auto;
-  color: #cbd5f5;
-  line-height: 1.6;
-}
-
-@media (max-width: 600px) {
-  .contacts-page header {
-    padding-top: 4.5rem;
-  }
-
-  .contacts-page header h1 {
-    font-size: 2rem;
-  }
-}
-
-/* ==========================
-   CONTATO – CARD DO FORMULÁRIO
-========================== */
-
-.contact-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 2rem 1rem 4rem;
-}
-
-.contact-card {
-  width: 100%;
-  max-width: 520px;
-  background: rgba(2, 6, 23, 0.75);
-  border: 1px solid #1e293b;
-  border-radius: 16px;
-  padding: 2rem 2rem 2.2rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-
-  backdrop-filter: blur(8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-}
-
-/* ==========================
-   CAMPOS
-========================== */
-
-.field {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.field label {
-  font-size: 0.8rem;
-  margin-bottom: 0.3rem;
-  color: #93c5fd;
-}
-
-.field input,
-.field textarea {
-  background: #020617;
-  border: 1px solid #1e293b;
-  border-radius: 10px;
-  padding: 0.75rem 0.9rem;
-  font-size: 0.85rem;
-  color: #e5e7eb;
-  transition: border 0.25s ease, box-shadow 0.25s ease;
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
-  color: #64748b;
-}
-
-.field input:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
-}
-
-/* ==========================
-   BOTÃO – UX MELHORADA
-========================== */
-
-.contact-button {
-  margin-top: 0.6rem;
-  padding: 0.85rem;
-  font-size: 0.9rem;
-  border-radius: 10px;
-  cursor: pointer;
-  letter-spacing: 0.4px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.contact-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
-}
-
-.contact-button:active {
-  transform: scale(0.98);
-}
-
-/* ==========================
-   MOBILE
-========================== */
-
-@media (max-width: 600px) {
-  .contact-card {
-    padding: 1.6rem 1.4rem;
-  }
-}
-
-/* ==========================
-   REDES SOCIAIS – CONTATO
-========================== */
-
-.social-divider {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.75rem;
-  color: #64748b;
-  margin: 1rem 0 0.6rem;
-}
-
-.social-divider::before,
-.social-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #1e293b;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 0.9rem;
-}
-
-.social-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #020617;
-  border: 1px solid #1e293b;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #e5e7eb;
-  font-size: 1rem;
-
-  transition: all 0.25s ease;
-}
-
-.social-icon:hover {
-  background: #0f172a;
-  color: #3b82f6;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
-}
-
-/* ==========================
-   BADGE – CARGA HORÁRIA
-========================== */
-
-.badge {
-  display: inline-block;
-  margin: 0.4rem 0 0.8rem;
-
-  padding: 0.25rem 0.6rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-
-  color: #93c5fd;
-  background: rgba(59, 130, 246, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  border-radius: 999px;
-
-  width: fit-content;
-}
-
-/* ==========================
-   CERTIFICADOS – BOTÃO NO FUNDO
-========================== */
-
-.certificates-grid .card {
-  display: flex;
-  flex-direction: column;
-}
-
-.certificates-grid .card .button {
-  margin-top: auto;
-}
-
-/* ==========================
-   BOTÃO PDF – ÍCONE + ANIMAÇÃO
-========================== */
-
-.pdf-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-
-  margin-top: auto;
-
-  border: 1px solid #475569;
-  background: transparent;
-  color: #e5e7eb;
-
-  transition: 
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.pdf-button i {
-  font-size: 0.85rem;
-  color: #ef4444; /* vermelho PDF */
-}
-
-/* HOVER SUTIL */
-.pdf-button:hover {
-  background: rgba(239, 68, 68, 0.08);
-  border-color: #ef4444;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.25);
-}
-
-/* CLICK */
-.pdf-button:active {
-  transform: scale(0.97);
 }
