@@ -121,6 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
     card.classList.add("card");
     card.setAttribute("data-animate", "");
 
+    // Força o estilo correto do card (igual ao CSS)
+    card.style.background = "#020617";
+    card.style.border = "1px solid #1e293b";
+    card.style.borderRadius = "14px";
+    card.style.padding = "1.4rem";
+    card.style.display = "flex";
+    card.style.flexDirection = "column";
+    card.style.justifyContent = "space-between";
+
     const title = document.createElement("h3");
     title.innerText = project.title;
 
