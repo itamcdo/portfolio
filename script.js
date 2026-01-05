@@ -96,26 +96,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  // ==========================
+// ==========================
   // DETECTAR HOME OU PROJECTS
   // ==========================
   let container = document.getElementById("home-projects");
   let projectsToShow = projects;
 
-  if(container) {
-    // HOME → mostrar 2 projetos
-    projectsToShow = projects.slice(0, 2);
-  } else {
-    // PROJECTS → mostrar todos
+  // Se não achar home-projects, procura o all-projects (página de projetos)
+  if (!container) {
     container = document.getElementById("all-projects");
+    projectsToShow = projects; // Mostra todos
+  } else {
+    // Se estiver na home, mostra apenas 2
+    projectsToShow = projects.slice(0, 2);
   }
 
-  if(container) {
+  if (container) {
     projectsToShow.forEach(project => {
       const card = document.createElement("div");
       card.classList.add("card");
-      card.setAttribute("data-animate", "");
+      // Importante: o CSS usa opacity 0. O script precisa observar para adicionar a classe "show"
+      card.setAttribute("data-animate", ""); 
 
+      // Estrutura Interna
       const title = document.createElement("h3");
       title.innerText = project.title;
       card.appendChild(title);
@@ -124,7 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
       desc.innerText = project.description;
       card.appendChild(desc);
 
-      if(project.link) {
+      // Lógica do Botão
+      if (project.link) {
         const a = document.createElement("a");
         a.href = project.link;
         a.target = "_blank";
@@ -134,13 +138,15 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         const span = document.createElement("span");
         span.classList.add("button", "secondary");
+        span.style.cursor = "default"; // Indica que não é clicável
         span.innerText = "Em Andamento";
         card.appendChild(span);
       }
 
       container.appendChild(card);
+      
+      // Força o IntersectionObserver a observar o novo card criado
       animateObserver.observe(card);
     });
   }
-
 });
