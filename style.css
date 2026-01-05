@@ -12,15 +12,29 @@ body {
   background: #020617;
   color: #e5e7eb;
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   PADRONIZAÇÃO DE TAMANHO
+========================== */
+.hero, 
+.navigation-container,
+.skills-wrapper, 
+#all-projects, 
+#home-projects, 
+footer {
+  max-width: 1000px; /* Tamanho único para todo o site */
+  margin: 0 auto;
+  padding: 1.5rem;
 }
 
 /* ==========================
    HERO & FOTO (CORREÇÃO MOBILE)
 ========================== */
 .hero {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 4rem 1.5rem 2rem;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
   text-align: center;
 }
 
@@ -42,10 +56,18 @@ body {
 }
 
 /* ==========================
+   NAVEGAÇÃO (BOTÃO VOLTAR)
+========================== */
+.navigation-container {
+  display: flex;
+  justify-content: flex-start; /* Alinha o botão à esquerda */
+  padding-bottom: 0;
+}
+
+/* ==========================
    BOTÕES (SISTEMA GLOBAL)
 ========================== */
-/* Esta regra garante que qualquer elemento com a classe .button ou .certificate-link apareça como botão */
-.button, .certificate-link, .card .button {
+.button, .certificate-link {
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
@@ -56,17 +78,14 @@ body {
   text-decoration: none !important;
   transition: 0.3s ease;
   cursor: pointer;
-  margin-top: 1rem;
   border: 1px solid transparent;
 }
 
-/* Botão Azul (Primário) */
 .button.primary, .certificate-link {
   background: #3b82f6 !important;
   color: #ffffff !important;
 }
 
-/* Botão Transparente (Secundário) */
 .button.secondary {
   background: transparent !important;
   border: 1px solid #334155 !important;
@@ -79,66 +98,72 @@ body {
 }
 
 /* ==========================
-   GRID E CARDS
+   GRIDS PADRONIZADOS (SKILLS/CERTIFICADOS/PROJETOS)
 ========================== */
 .skills-wrapper, #all-projects, #home-projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+  align-items: stretch; /* Cards com mesma altura na linha */
 }
 
 .skill-category, .card {
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid #1e293b;
   border-radius: 16px;
-  padding: 2rem !important;
+  padding: 1.8rem !important;
   display: flex;
   flex-direction: column;
 }
 
-/* Força o botão para o final do card nos projetos */
-.card p {
-  flex-grow: 1;
-}
+.card p { flex-grow: 1; } /* Empurra botão para o fim do card */
 
 /* ==========================
    SKILLS (BARRAS)
 ========================== */
-.skill-item { margin-bottom: 1.5rem; }
-.skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
-.skill-bar-bg { background: #0f172a; height: 10px; border-radius: 10px; overflow: hidden; border: 1px solid #1e293b; }
+.skill-item { margin-bottom: 1.2rem; }
+.skill-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.skill-bar-bg { background: #0f172a; height: 10px; border-radius: 10px; border: 1px solid #1e293b; overflow: hidden; }
 .skill-bar { height: 100%; background: #3b82f6; width: 0; transition: width 1.5s ease; }
 
 /* ==========================
-   CERTIFICADOS (ESTRUTURA)
+   CERTIFICADOS (ESTRUTURA COMPACTA)
 ========================== */
 .certificate-card {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
   background: #0f172a;
-  padding: 1.2rem;
+  padding: 1rem;
   border-radius: 12px;
-  margin-bottom: 1rem;
   border: 1px solid #1e293b;
+  margin-bottom: 1rem;
 }
 
 .hours {
-  min-width: 50px;
-  height: 50px;
+  min-width: 48px;
+  height: 48px;
   background: #3b82f6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  font-size: 0.8rem;
   flex-shrink: 0;
 }
 
-.certificate-content { flex: 1; }
+.certificate-content h3 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+.certificate-content p { font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.5rem; }
+
+/* ==========================
+   RESPONSIVIDADE (MOBILE)
+========================== */
+@media (max-width: 768px) {
+  .skills-wrapper { grid-template-columns: 1fr; }
+  .certificate-card { flex-direction: row; text-align: left; }
+  .navigation-container { justify-content: center; } /* Centraliza botão voltar no mobile */
+}
 
 /* ==========================
    FOOTER
