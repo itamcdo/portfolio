@@ -15,7 +15,6 @@ body {
   color: #e5e7eb;
   min-height: 100vh;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 @keyframes gradientBG {
@@ -25,7 +24,7 @@ body {
 }
 
 /* ==========================
-   HERO (CABEÇALHO)
+   HERO
 ========================== */
 .hero {
   max-width: 960px;
@@ -36,7 +35,6 @@ body {
 
 .hero h1 {
   font-size: 2.5rem;
-  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -46,193 +44,173 @@ body {
 }
 
 /* ==========================
-   BOTÕES GERAIS
-========================== */
-.buttons {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.button.primary { background: #3b82f6; color: #fff; }
-.button.secondary { border: 1px solid #475569; color: #e5e7eb; background: transparent; }
-
-.button:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.1);
-}
-
-/* ==========================
-   GRID DE PROJETOS (#home-projects e #all-projects)
-========================== */
-#home-projects, #all-projects {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
-  border-radius: 12px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;    
-  text-align: center;     
-  transition: 0.3s ease;
-  opacity: 0;             
-  transform: translateY(20px);
-}
-
-.card.show { opacity: 1; transform: translateY(0); }
-.card:hover { border-color: #3b82f6; transform: translateY(-5px); }
-
-.card h3 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #fff; }
-.card p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.5rem; flex-grow: 1; }
-
-/* ==========================
-   SKILLS (CORRIGIDO)
+   GRID DE CONTEÚDO (SKILLS E CERTIFICADOS)
 ========================== */
 .skills-wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* Cria colunas para as categorias (Dados, IA, etc) */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+  align-items: start;
 }
 
+/* Container de cada categoria */
 .skill-category {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(15, 23, 42, 0.4);
   border: 1px solid #1e293b;
-  border-radius: 16px;
-  padding: 2rem;
-  opacity: 0; /* Para animação data-animate */
-  transform: translateY(20px);
-  transition: 0.6s ease;
-}
-
-.skill-category.show {
-  opacity: 1;
-  transform: translateY(0);
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: 0.3s;
 }
 
 .skill-category h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #60a5fa;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #1e293b;
   padding-bottom: 0.5rem;
 }
 
+/* ==========================
+   CARDS DE CERTIFICADO (CORREÇÃO DA IMAGEM)
+========================== */
+.certificate-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(2, 6, 23, 0.6);
+  border: 1px solid #334155;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+}
+
+.certificate-card:hover {
+  border-color: #3b82f6;
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateX(5px);
+}
+
+.hours {
+  min-width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: white;
+  flex-shrink: 0; /* Impede que a bolinha amasse */
+}
+
+.certificate-content {
+  flex: 1;
+}
+
+.certificate-content h3 {
+  font-size: 1rem;
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.certificate-content p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0.8rem;
+}
+
+/* BOTÃO DO CERTIFICADO */
+.certificate-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #3b82f6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.certificate-link:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+/* ==========================
+   SKILLS (BARRAS DE PROGRESSO)
+========================== */
 .skill-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .skill-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
   font-size: 0.9rem;
-  font-weight: 600;
-  color: #e5e7eb;
+  margin-bottom: 0.4rem;
 }
 
 .skill-bar-bg {
   background: #1e293b;
-  height: 10px;
-  border-radius: 20px;
+  height: 8px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
 .skill-bar {
   height: 100%;
-  background: linear-gradient(90deg, #3b82f6, #60a5fa);
-  width: 0; /* Controlado pelo script via data-width */
-  transition: width 1.5s cubic-bezier(0.1, 0.5, 0.5, 1);
+  background: #3b82f6;
+  width: 0; /* Animado pelo script */
+  transition: width 1s ease-in-out;
 }
 
 /* ==========================
-   CERTIFICADOS
+   PROJETOS (GRID)
 ========================== */
-.certificates-wrapper {
-  grid-template-columns: 1fr !important;
-  max-width: 800px;
-}
-
-.certificate-card {
-  display: flex;
-  align-items: center;
+#all-projects, #home-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  padding: 1.5rem;
-  margin-bottom: 1.2rem;
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid #1e293b;
-  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
-.hours {
-  min-width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #60a5fa);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
-
-.certificate-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #1e293b;
-  color: #93c5fd;
-  border: 1px solid #334155;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  text-decoration: none;
-}
-
-.certificate-link:hover { background: #3b82f6; color: #fff; }
 
 /* ==========================
    FOOTER
 ========================== */
 footer {
-  border-top: 1px solid #1e293b;
   text-align: center;
-  padding: 3rem 1.5rem;
-  font-size: 0.85rem;
-  color: #94a3b8;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 0.9rem;
 }
 
 /* ==========================
    RESPONSIVO
 ========================== */
 @media (max-width: 768px) {
-  .certificate-card { flex-direction: column; text-align: center; }
-  .hero h1 { font-size: 2rem; }
-  .skills-wrapper { grid-template-columns: 1fr; }
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .certificate-card {
+    flex-direction: row; /* Mantém ícone ao lado no tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-card {
+    flex-direction: column; /* Empilha no celular muito pequeno */
+    align-items: center;
+    text-align: center;
+  }
 }
