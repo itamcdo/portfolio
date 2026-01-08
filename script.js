@@ -85,6 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
       link: null
     },
     {
+      title: "🥗 NutriData Brasil",
+      description: "Visualização interativa de indicadores nutricionais por estado brasileiro, com mapas, gráficos de radar e comparações",
+      link: "https://github.com/itamcdo/nutridata-brasil"
+    },
+    {
       title: "🐍 Sistema Bancário em Python",
       description: "Projeto desenvolvido como desafio da DIO para praticar lógica de programação e fundamentos do Python.",
       link: "https://github.com/itamcdo/sistema-bancario-python"
