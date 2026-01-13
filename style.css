@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #020617;
+  background: #000000; /* Preto fosco */
   color: #e5e7eb;
   line-height: 1.6;
   overflow-x: hidden;
@@ -42,11 +42,11 @@ footer {
   width: 100px; 
   height: 100px;
   border-radius: 50%;
-  border: 3px solid #3b82f6;
+  border: none; /* remove borda azul */
   object-fit: cover;
   margin: 0 auto 1.5rem;
   display: block;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
 }
 
 .hero h1 {
@@ -57,7 +57,7 @@ footer {
 
 .subtitle {
   font-size: 0.95rem;
-  color: #94a3b8;
+  color: #9ca3af;
   max-width: 700px;
   margin: 0 auto 2rem;
 }
@@ -73,7 +73,8 @@ footer {
 /* ==========================
    BOTÕES (Global)
 ========================== */
-.button, .certificate-link {
+.button,
+.certificate-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -82,34 +83,32 @@ footer {
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: 0.25s ease;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid #1f2933;
+  background: #0b0b0b;
+  color: #e5e7eb;
 }
 
-.button.primary {
-  background: #3b82f6;
-  color: #ffffff;
-}
-
+/* Todos os botões no mesmo tom */
+.button.primary,
 .button.secondary {
-  background: transparent;
-  border: 1px solid #334155;
+  background: #0b0b0b;
+  border: 1px solid #1f2933;
   color: #e5e7eb;
 }
 
 .certificate-link {
-  background: #3b82f6;
-  color: #ffffff;
   padding: 0.4rem 0.8rem;
   font-size: 0.75rem;
   margin-top: 0.5rem;
 }
 
-.button:hover, .certificate-link:hover {
-  filter: brightness(1.2);
+.button:hover,
+.certificate-link:hover {
+  background: #111827;
   transform: translateY(-2px);
-  border-color: #3b82f6;
+  border-color: #374151;
 }
 
 /* ==========================
@@ -124,9 +123,10 @@ footer {
   margin-top: 1rem;
 }
 
-.skill-category, .card {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid #1e293b;
+.skill-category,
+.card {
+  background: #0a0a0a;
+  border: 1px solid #1f2933;
   border-radius: 16px;
   padding: 1.5rem;
   display: flex;
@@ -136,8 +136,8 @@ footer {
 .skill-category h2 {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
-  color: #3b82f6;
-  border-bottom: 1px solid #1e293b;
+  color: #d1d5db;
+  border-bottom: 1px solid #1f2933;
   padding-bottom: 0.5rem;
 }
 
@@ -157,41 +157,41 @@ footer {
 }
 
 .skill-bar-bg {
-  background: #0f172a;
+  background: #050505;
   height: 8px;
   border-radius: 10px;
-  border: 1px solid #1e293b;
+  border: 1px solid #1f2933;
   overflow: hidden;
 }
 
 .skill-bar {
   height: 100%;
-  background: #3b82f6;
-  width: 0; /* Começa em 0 para o Script animar */
+  background: #6b7280; /* cinza elegante */
+  width: 0;
   transition: width 1.2s cubic-bezier(0.1, 0.5, 0.5, 1);
   border-radius: 10px;
 }
 
 /* ==========================
-   CERTIFICADOS (Cards Internos)
+   CERTIFICADOS
 ========================== */
 .certificate-card {
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  background: rgba(2, 6, 23, 0.3);
+  background: #050505;
   padding: 0.8rem;
   border-radius: 10px;
-  border: 1px solid #1e293b;
+  border: 1px solid #1f2933;
   margin-bottom: 0.8rem;
 }
 
 .hours {
   min-width: 35px;
   height: 35px;
-  background: #1e293b;
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
+  background: #0b0b0b;
+  border: 1px solid #374151;
+  color: #d1d5db;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -201,14 +201,30 @@ footer {
   flex-shrink: 0;
 }
 
-.certificate-content h3 { font-size: 0.85rem; color: #f1f5f9; }
-.certificate-content p { font-size: 0.75rem; color: #94a3b8; }
+.certificate-content h3 {
+  font-size: 0.85rem;
+  color: #f9fafb;
+}
+
+.certificate-content p {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
 
 /* ==========================
-   PROJETOS (Cards Gerados pelo JS)
+   PROJETOS
 ========================== */
-.card h3 { font-size: 1rem; margin-bottom: 0.6rem; }
-.card p { font-size: 0.85rem; color: #cbd5f5; margin-bottom: 1.2rem; flex-grow: 1; }
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
 
 /* ==========================
    ANIMAÇÕES & RESPONSIVIDADE
@@ -225,17 +241,28 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hero .profile-img { width: 90px; height: 90px; }
-  .hero h1 { font-size: 1.6rem; }
-  .skills-wrapper, #home-projects, #all-projects {
+  .hero .profile-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .skills-wrapper,
+  #home-projects,
+  #all-projects {
     grid-template-columns: 1fr;
   }
 }
 
-/* FOOTER */
+/* ==========================
+   FOOTER
+========================== */
 footer {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: #6b7280;
   font-size: 0.8rem;
 }
