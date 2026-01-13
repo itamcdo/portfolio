@@ -63,10 +63,9 @@ footer,
 }
 
 /* ==========================
-   BOTÕES
+   BOTÕES (ALINHADO COM O JS)
 ========================== */
-.button,
-.certificate-link {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -75,28 +74,34 @@ footer,
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
-  cursor: pointer;
-  background: #1e293b; /* azul escuro fosco */
-  color: #e5e7eb;
-  border: 1px solid #2563eb;
+  border: 1px solid transparent;
   transition: all 0.25s ease;
 }
 
-.button:hover,
-.certificate-link:hover {
+/* Projeto disponível */
+.button.primary {
+  background: #1e293b;           /* azul fosco */
+  border: 1px solid #2563eb;
+  color: #e5e7eb;
+}
+
+.button.primary:hover {
   background: #2563eb;
   color: #ffffff;
   transform: translateY(-2px);
 }
 
-/* Botão de projeto em andamento */
-.button.disabled,
-.button.in-progress {
+/* Projeto em andamento (link null) */
+.button.secondary {
   background: #0a0a0a;
   border: 1px solid #1f2933;
   color: #6b7280;
-  cursor: not-allowed;
-  pointer-events: none;
+  cursor: default;
+}
+
+.button.secondary:hover {
+  background: #0a0a0a;
+  transform: none;
 }
 
 /* ==========================
@@ -142,7 +147,7 @@ footer,
   height: 100%;
   background: linear-gradient(
     90deg,
-    #1e40af,
+    #1e3a8a,
     #2563eb
   );
   width: 0;
