@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | Maria Ita Macêdo</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    header {
+      text-align: center;
+      margin-top: 60px; /* Ajustado para dar espaço ao botão */
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #94a3b8;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 100px;
+    }
+
+    /* CARD DO FORMULÁRIO */
+    .contact-card {
+      background: #020617;
+      border-radius: 18px;
+      padding: 36px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border: 1px solid #1e293b;
+    }
+
+    label {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    input,
+    textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 15px;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59,130,246,0.3);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* BOTÃO ENVIAR */
+    .contact-button {
+      margin-top: 10px;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(59,130,246,0.4);
+    }
+
+    /* STATUS */
+    #form-status {
+      display: none;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    /* DIVISOR */
+    .social-divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 12px;
+    }
+
+    .social-divider::before,
+    .social-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #1e293b;
+    }
+
+    /* ÍCONES SOCIAIS */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .social-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #020617;
+      border: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5e7eb;
+      transition: all 0.25s ease;
+      font-size: 18px;
+    }
+
+    .social-icon:hover {
+      color: #3b82f6;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(59,130,246,0.4);
+    }
+    
+    /* Ajuste para o botão de voltar não ficar centralizado pelo header */
+    .navigation-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body class="contacts-page">
+
+  <div class="navigation-container">
+    <a href="index.html" class="button secondary">← Voltar para Home</a>
+  </div>
+
+  <header>
+    <h1 data-animate>Contato</h1>
+    <p data-animate>
+      Entre em contato comigo através do formulário abaixo ou pelas minhas redes profissionais.
+    </p>
+  </header>
+
+  <main>
+
+    <form
+      class="contact-card"
+      data-animate
+      action="https://formspree.io/f/meeoeknz"
+      method="POST"
+    >
+
+      <label for="name">Nome</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Seu nome"
+        required
+      >
+
+      <label for="email">E-mail</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="seu@email.com"
+        required
+      >
+
+      <label for="message">Mensagem</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Escreva sua mensagem"
+        required
+      ></textarea>
+
+      <button type="submit" class="contact-button">
+        Enviar mensagem
+      </button>
+
+      <p id="form-status"></p>
+
+      <div class="social-divider">
+        <span>ou me encontre em</span>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/itamacdo" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://github.com/itamcdo" target="_blank" class="social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="mailto:itammacedo20@gmail.com" class="social-icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+    </form>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

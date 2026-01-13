@@ -1,0 +1,241 @@
+/* ==========================
+   RESET & BASE
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==========================
+   PADRONIZAÇÃO DE LAYOUT
+========================== */
+.hero,
+.navigation-container,
+.skills-wrapper,
+#all-projects,
+#home-projects,
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ==========================
+   HERO (Página Inicial e Títulos)
+========================== */
+.hero {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.hero .profile-img {
+  width: 100px; 
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #3b82f6;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+  display: block;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* Botões na Hero (Home) */
+.hero .buttons {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================
+   BOTÕES (Global)
+========================== */
+.button, .certificate-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.button.primary {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.button.secondary {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+}
+
+.certificate-link {
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.button:hover, .certificate-link:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+}
+
+/* ==========================
+   GRIDS E CATEGORIAS
+========================== */
+.skills-wrapper,
+#all-projects,
+#home-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.skill-category, .card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-category h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #3b82f6;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.5rem;
+}
+
+/* ==========================
+   SKILLS (Barras de Progresso)
+========================== */
+.skill-item {
+  margin-bottom: 1.2rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.skill-bar-bg {
+  background: #0f172a;
+  height: 8px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  background: #3b82f6;
+  width: 0; /* Começa em 0 para o Script animar */
+  transition: width 1.2s cubic-bezier(0.1, 0.5, 0.5, 1);
+  border-radius: 10px;
+}
+
+/* ==========================
+   CERTIFICADOS (Cards Internos)
+========================== */
+.certificate-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: rgba(2, 6, 23, 0.3);
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  margin-bottom: 0.8rem;
+}
+
+.hours {
+  min-width: 35px;
+  height: 35px;
+  background: #1e293b;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+.certificate-content h3 { font-size: 0.85rem; color: #f1f5f9; }
+.certificate-content p { font-size: 0.75rem; color: #94a3b8; }
+
+/* ==========================
+   PROJETOS (Cards Gerados pelo JS)
+========================== */
+.card h3 { font-size: 1rem; margin-bottom: 0.6rem; }
+.card p { font-size: 0.85rem; color: #cbd5f5; margin-bottom: 1.2rem; flex-grow: 1; }
+
+/* ==========================
+   ANIMAÇÕES & RESPONSIVIDADE
+========================== */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+[data-animate].show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero .profile-img { width: 90px; height: 90px; }
+  .hero h1 { font-size: 1.6rem; }
+  .skills-wrapper, #home-projects, #all-projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+  font-size: 0.8rem;
+}
