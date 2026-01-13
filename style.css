@@ -63,9 +63,10 @@ footer,
 }
 
 /* ==========================
-   BOTÕES (ALINHADO COM O JS)
+   BOTÕES (GLOBAL)
 ========================== */
-.button {
+.button,
+.certificate-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -74,24 +75,32 @@ footer,
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 1px solid #1f2933;
+  background: #0b1220;
+  color: #e5e7eb;
+  cursor: pointer;
   transition: all 0.25s ease;
 }
 
-/* Projeto disponível */
-.button.primary {
-  background: #1e293b;           /* azul fosco */
-  border: 1px solid #2563eb;
-  color: #e5e7eb;
-}
-
-.button.primary:hover {
-  background: #2563eb;
-  color: #ffffff;
+/* Hover leve e elegante (todos os botões) */
+.button:hover,
+.certificate-link:hover {
+  background: #111827;
+  border-color: #2563eb;
   transform: translateY(-2px);
 }
 
-/* Projeto em andamento (link null) */
+/* ==========================
+   BOTÃO PROJETO DISPONÍVEL
+========================== */
+.button.primary {
+  background: #0b1220;
+  border-color: #2563eb;
+}
+
+/* ==========================
+   PROJETO EM ANDAMENTO (JS link: null)
+========================== */
 .button.secondary {
   background: #0a0a0a;
   border: 1px solid #1f2933;
@@ -102,6 +111,25 @@ footer,
 .button.secondary:hover {
   background: #0a0a0a;
   transform: none;
+  border-color: #1f2933;
+}
+
+/* ==========================
+   CERTIFICADOS – BOTÃO VISÍVEL
+========================== */
+.certificate-link {
+  margin-top: 0.6rem;
+  width: fit-content;
+  background: #020617;
+  border: 1px solid #1e3a8a;
+  color: #93c5fd;
+  font-size: 0.75rem;
+}
+
+.certificate-link:hover {
+  background: #020617;
+  border-color: #2563eb;
+  color: #bfdbfe;
 }
 
 /* ==========================
@@ -122,6 +150,14 @@ footer,
   border: 1px solid #1f2933;
   border-radius: 16px;
   padding: 1.5rem;
+}
+
+/* Hover leve nos cards */
+.card:hover,
+.skill-category:hover {
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  transition: 0.25s ease;
 }
 
 /* ==========================
