@@ -7,12 +7,17 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 15px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  background: #000000;
+  background: #050505;
   color: #e5e7eb;
   line-height: 1.6;
   overflow-x: hidden;
+  font-size: 0.9rem;
 }
 
 /* ==========================
@@ -23,8 +28,7 @@ body {
 .skills-wrapper,
 #all-projects,
 #home-projects,
-footer,
-.contact-container {
+footer {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1.5rem;
@@ -40,23 +44,22 @@ footer,
 }
 
 .hero .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
-  border: none;
+  border: none; /* remove borda azul */
   object-fit: cover;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.2rem;
   display: block;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
 }
 
 .hero h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
 }
 
 .subtitle {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #9ca3af;
   max-width: 700px;
   margin: 0 auto 2rem;
@@ -70,110 +73,113 @@ footer,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.3rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  padding: 0.55rem 1.4rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
   border: 1px solid #1f2933;
   background: #0b1220;
   color: #e5e7eb;
-  cursor: pointer;
-  transition: all 0.25s ease;
 }
 
-/* Hover leve e elegante (todos os botões) */
+/* Hover padrão */
 .button:hover,
 .certificate-link:hover {
+  transform: translateY(-2px);
+  border-color: #2563eb;
+  background: #111827;
+}
+
+/* Botão primário */
+.button.primary {
+  background: #0f1f3d;
+  border-color: #2563eb;
+}
+
+/* ==========================
+   BOTÕES DO MENU (HOME)
+========================== */
+.navigation-container .button {
+  background: #0b1220;
+  border: 1px solid #1f2933;
+}
+
+.navigation-container .button:hover {
   background: #111827;
   border-color: #2563eb;
-  transform: translateY(-2px);
 }
 
 /* ==========================
-   BOTÃO PROJETO DISPONÍVEL
-========================== */
-.button.primary {
-  background: #0b1220;
-  border-color: #2563eb;
-}
-
-/* ==========================
-   PROJETO EM ANDAMENTO (JS link: null)
-========================== */
-.button.secondary {
-  background: #0a0a0a;
-  border: 1px solid #1f2933;
-  color: #6b7280;
-  cursor: default;
-}
-
-.button.secondary:hover {
-  background: #0a0a0a;
-  transform: none;
-  border-color: #1f2933;
-}
-
-/* ==========================
-   CERTIFICADOS – BOTÃO VISÍVEL
-========================== */
-.certificate-link {
-  margin-top: 0.6rem;
-  width: fit-content;
-  background: #020617;
-  border: 1px solid #1e3a8a;
-  color: #93c5fd;
-  font-size: 0.75rem;
-}
-
-.certificate-link:hover {
-  background: #020617;
-  border-color: #2563eb;
-  color: #bfdbfe;
-}
-
-/* ==========================
-   GRIDS & CARDS
+   GRIDS
 ========================== */
 .skills-wrapper,
 #all-projects,
 #home-projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.4rem;
   margin-top: 1rem;
 }
 
+/* ==========================
+   CARDS
+========================== */
 .skill-category,
 .card {
-  background: #0a0a0a;
+  background: rgba(15, 15, 15, 0.9);
   border: 1px solid #1f2933;
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
 }
 
-/* Hover leve nos cards */
-.card:hover,
-.skill-category:hover {
-  border-color: #2563eb;
-  transform: translateY(-2px);
-  transition: 0.25s ease;
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
 }
 
 /* ==========================
    SKILLS
 ========================== */
+.skill-category h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #60a5fa;
+  border-bottom: 1px solid #1f2933;
+  padding-bottom: 0.4rem;
+}
+
+.skill-item {
+  margin-bottom: 1.1rem;
+}
+
 .skill-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
-  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
 .skill-bar-bg {
-  background: #050505;
-  height: 8px;
+  background: #0b1220;
+  height: 7px;
   border-radius: 10px;
   border: 1px solid #1f2933;
   overflow: hidden;
@@ -181,13 +187,9 @@ footer,
 
 .skill-bar {
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    #1e3a8a,
-    #2563eb
-  );
+  background: #2563eb;
   width: 0;
-  transition: width 1.3s cubic-bezier(0.1, 0.6, 0.3, 1);
+  transition: width 1.2s cubic-bezier(0.1, 0.5, 0.5, 1);
   border-radius: 10px;
 }
 
@@ -196,19 +198,21 @@ footer,
 ========================== */
 .certificate-card {
   display: flex;
+  align-items: flex-start;
   gap: 0.8rem;
-  background: #050505;
+  background: rgba(10, 10, 10, 0.9);
   padding: 0.8rem;
   border-radius: 10px;
   border: 1px solid #1f2933;
+  margin-bottom: 0.8rem;
 }
 
 .hours {
-  min-width: 35px;
-  height: 35px;
-  background: #020617;
+  min-width: 34px;
+  height: 34px;
+  background: #0b1220;
   border: 1px solid #2563eb;
-  color: #93c5fd;
+  color: #60a5fa;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -217,30 +221,30 @@ footer,
   font-size: 0.65rem;
 }
 
+.certificate-content h3 {
+  font-size: 0.8rem;
+  color: #f1f5f9;
+}
+
+.certificate-content p {
+  font-size: 0.72rem;
+  color: #9ca3af;
+}
+
 /* ==========================
-   FORMULÁRIO DE CONTATO
+   BOTÃO EM ANDAMENTO
 ========================== */
-.contact-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-container input,
-.contact-container textarea {
-  background: #050505;
+.button.secondary {
+  background: transparent;
   border: 1px solid #1f2933;
-  padding: 0.7rem;
-  border-radius: 8px;
-  color: #e5e7eb;
-  font-size: 0.85rem;
+  color: #6b7280;
+  cursor: default;
 }
 
-.contact-container input:focus,
-.contact-container textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+.button.secondary:hover {
+  transform: none;
+  background: transparent;
+  border-color: #1f2933;
 }
 
 /* ==========================
@@ -248,8 +252,8 @@ footer,
 ========================== */
 [data-animate] {
   opacity: 0;
-  transform: translateY(25px);
-  transition: all 0.7s ease;
+  transform: translateY(18px);
+  transition: all 0.6s ease;
 }
 
 [data-animate].show {
@@ -264,15 +268,23 @@ footer {
   text-align: center;
   padding: 3rem;
   color: #6b7280;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 /* ==========================
    RESPONSIVO
 ========================== */
 @media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
   .hero h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
   }
 
   .skills-wrapper,
