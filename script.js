@@ -128,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Este projeto simula uma interação por voz com o ChatGPT, priorizando compatibilidade entre diferentes ambientes.",
       link: "https://github.com/itamcdo/chatgpt-voice-assistant"
     }
-    { 
   ];
 
   const homeContainer = document.getElementById("home-projects");
