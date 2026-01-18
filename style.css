@@ -400,3 +400,12 @@ footer {
   color: #60a5fa;
   transform: translateY(-2px);
 }
+
+/* ==========================
+   BOTÃO VOLTAR PARA HOME
+========================== */
+.back-home {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+}
