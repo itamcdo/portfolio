@@ -20,8 +20,8 @@
   <style>
     header {
       text-align: center;
-      margin-top: 60px; /* Ajustado para dar espaço ao botão */
-      margin-bottom: 30px;
+      margin-top: 60px;
+      margin-bottom: 20px;
     }
 
     header h1 {
@@ -40,18 +40,25 @@
       padding-bottom: 100px;
     }
 
+    /* BOTÃO VOLTAR */
+    .navigation-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
     /* CARD DO FORMULÁRIO */
     .contact-card {
-    background: rgba(15, 15, 15, 0.9);
-    border: 1px solid #1f2933;
-    border-radius: 16px;
-    padding: 36px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+      background: rgba(15, 15, 15, 0.9);
+      border: 1px solid #1f2933;
+      border-radius: 16px;
+      padding: 36px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     label {
@@ -99,7 +106,6 @@
       box-shadow: 0 12px 24px rgba(59,130,246,0.4);
     }
 
-    /* STATUS */
     #form-status {
       display: none;
       text-align: center;
@@ -107,7 +113,6 @@
       margin-top: 6px;
     }
 
-    /* DIVISOR */
     .social-divider {
       display: flex;
       align-items: center;
@@ -125,7 +130,6 @@
       background: #1e293b;
     }
 
-    /* ÍCONES SOCIAIS */
     .social-links {
       display: flex;
       justify-content: center;
@@ -152,19 +156,10 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(59,130,246,0.4);
     }
-    
-    /* Ajuste para o botão de voltar não ficar centralizado pelo header */
-    .navigation-container {
-      margin-top: 20px;
-    }
   </style>
 </head>
 
 <body class="contacts-page">
-
-  <div class="navigation-container">
-    <a href="index.html" class="button secondary">← Voltar para Home</a>
-  </div>
 
   <header>
     <h1 data-animate>Contato</h1>
@@ -173,40 +168,25 @@
     </p>
   </header>
 
-  <main>
+  <div class="navigation-container">
+    <a href="index.html" class="button secondary">← Voltar para Home</a>
+  </div>
 
+  <main>
     <form
       class="contact-card"
       data-animate
       action="https://formspree.io/f/meeoeknz"
       method="POST"
     >
-
       <label for="name">Nome</label>
-      <input
-        id="name"
-        name="name"
-        type="text"
-        placeholder="Seu nome"
-        required
-      >
+      <input id="name" name="name" type="text" placeholder="Seu nome" required>
 
       <label for="email">E-mail</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="seu@email.com"
-        required
-      >
+      <input id="email" name="email" type="email" placeholder="seu@email.com" required>
 
       <label for="message">Mensagem</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Escreva sua mensagem"
-        required
-      ></textarea>
+      <textarea id="message" name="message" placeholder="Escreva sua mensagem" required></textarea>
 
       <button type="submit" class="contact-button">
         Enviar mensagem
@@ -231,9 +211,7 @@
           <i class="fas fa-envelope"></i>
         </a>
       </div>
-
     </form>
-
   </main>
 
   <script src="script.js"></script>
