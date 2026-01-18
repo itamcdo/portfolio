@@ -402,10 +402,11 @@ footer {
 }
 
 /* ==========================
-   BOTÃO VOLTAR PARA HOME
+   BOTÃO VOLTAR PARA HOME 
 ========================== */
 .back-home {
-  display: flex;
-  margin: 0 auto;
-  width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
