@@ -34,6 +34,12 @@ footer {
   padding: 1.5rem;
 }
 
+/* 🔹 ALTERAÇÃO ÚNICA AQUI */
+.navigation-container {
+  display: flex;
+  justify-content: center;
+}
+
 /* ==========================
    HERO
 ========================== */
@@ -47,7 +53,7 @@ footer {
   width: 95px;
   height: 95px;
   border-radius: 50%;
-  border: none; /* remove borda azul */
+  border: none;
   object-fit: cover;
   margin: 0 auto 1.2rem;
   display: block;
@@ -85,7 +91,6 @@ footer {
   color: #e5e7eb;
 }
 
-/* Hover padrão */
 .button:hover,
 .certificate-link:hover {
   transform: translateY(-2px);
@@ -93,7 +98,6 @@ footer {
   background: #111827;
 }
 
-/* Botão primário */
 .button.primary {
   background: #0f1f3d;
   border-color: #2563eb;
@@ -293,6 +297,7 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
 /* ==========================
    CONTATO – PALETA 
 ========================== */
@@ -400,13 +405,3 @@ footer {
   color: #60a5fa;
   transform: translateY(-2px);
 }
-
-/* ==========================
-   BOTÃO VOLTAR PARA HOME 
-========================== */
-.back-home {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
