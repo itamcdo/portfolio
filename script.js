@@ -104,25 +104,31 @@ document.addEventListener("DOMContentLoaded", () => {
       link: null
     },
     {
+      title: "🧾 Gerador Automático de Recibos – Google Apps Script",
+      description: "Automatiza a geração de recibos financeiros utilizando o Google Sheets como fonte de dados e o Google Docs para criação dos documentos.",
+      link: "https://github.com/itamcdo/google-apps-script-receipt-automation"
+    },
+    {
       title: "🥗 NutriData Brasil",
       description: "Visualização interativa de indicadores nutricionais por estado brasileiro, com mapas e gráficos.",
       link: "https://github.com/itamcdo/nutridata-brasil"
     },
     {
       title: "🐍 Sistema Bancário em Python",
-      description: "Projeto desenvolvido como desafio da DIO para praticar lógica de programação e fundamentos do Python.",
+      description: "Projeto desenvolvido para praticar lógica de programação e fundamentos do Python.",
       link: "https://github.com/itamcdo/sistema-bancario-python"
     },
     {
-      title: "🛠 Automação",
-      description: "Geração automática de recibos via Google Apps Script usando Google Sheets e Docs.",
-      link: "https://github.com/itamcdo/google-apps-script-receipt-automation"
+      title: "📊 Banco de Dados – E-commerce",
+      description: "Projeto de modelagem de banco de dados para um sistema de e-commerce.",
+      link: "https://github.com/itamcdo/modelo-banco-ecommerce"
     },
     { 
-      title: "📊 Análise de Dados",
-      description: "Criação de dashboards e indicadores estratégicos com foco em clareza e impacto.",
-      link: null
+      title: "🎙️ ChatGPT com Entrada de Texto e Saída em Áudio",
+      description: "Este projeto simula uma interação por voz com o ChatGPT, priorizando compatibilidade entre diferentes ambientes.",
+      link: "https://github.com/itamcdo/chatgpt-voice-assistant"
     }
+    { 
   ];
 
   const homeContainer = document.getElementById("home-projects");
